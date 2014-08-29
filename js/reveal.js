@@ -2484,6 +2484,7 @@
 
 				var backgroundImage = slide.getAttribute( 'data-background-image' ),
 					backgroundVideo = slide.getAttribute( 'data-background-video' );
+				var backgroundVideoLoop = slide.getAttribute( 'data-background-video-loop' );
 
 				// Images
 				if( backgroundImage ) {
@@ -2496,6 +2497,9 @@
 					// Support comma separated lists of video sources
 					backgroundVideo.split( ',' ).forEach( function( source ) {
 						video.innerHTML += '<source src="'+ source +'">';
+						if (backgroundVideoLoop === "true") {
+							video.loop = true;
+						}
 					} );
 
 					background.appendChild( video );
