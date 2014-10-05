@@ -37,7 +37,6 @@ var link = document.createElement( 'link' );
 <body>
 
 <div class="reveal">
-<div id="list">
     <div id="print-never">
     <div id="dark-overlay">
     </div>
@@ -101,6 +100,7 @@ var link = document.createElement( 'link' );
             </section>
             <section>
                 <h2 class="alt"> Development Flow </h2>
+                <div id="list">
                 <ul>
                     <li class="fragment">Primarily email driven
                     <ul>
@@ -128,6 +128,7 @@ var link = document.createElement( 'link' );
                     IRC &mdash; <code>#qemu</code> on <a href="http://www.oftc.net/">irc.oftc.net</a>
                     </li>
                 </ul>
+                </div>
             </section>
         </section>
 
@@ -160,6 +161,7 @@ var link = document.createElement( 'link' );
            </section>
             <section>
                 <h2 class="alt">Creating Quality Patches</h2>
+                <div id="list">
                 <ul>
                     <li class="fragment">Each individual patch is a logical changeset
                     <ul>
@@ -174,9 +176,10 @@ var link = document.createElement( 'link' );
                         </ul></li></li>
                     </ul></li>
                 </ul>
+                </div>
             </section>
             <section>
-                <div align="left">
+                <div align="left" id="list">
                     <h2 class="alt">Creating Quality Patches</h2>
                     <ul>
                         <li class="fragment">Meaningful commit messages
@@ -241,7 +244,7 @@ Date:   Thu Sep 25 09:54:02 2014 +0200
 
             </section>
             <section>
-                <div align="left">
+                <div align="left" id="list">
                     <h2 class="alt">Formatting Your Patches</h2>
                     <ul>
                         <li class="fragment">Sign your patch!
@@ -266,7 +269,7 @@ git format-patch --subject-prefix="PATCH" -s \
                 </div>
             </section>
             <section>
-                <div align="left">
+                <div align="left" id="list">
                 <h2 class="alt">Sending out the patches</h2>
                 <ul>
                     <li class="fragment">Send patches inline
@@ -282,6 +285,7 @@ git format-patch --subject-prefix="PATCH" -s \
                     <ul><li class="fragment">Other mail agents may munge the patches</li>
                     </ul></li>
                 </ul> 
+                </div>
                 <div align="left" class="fragment">
                 <pre class="alt"> <code># For example:
 git send-email --to=qemu-devel@nongnu.org \
@@ -289,10 +293,10 @@ git send-email --to=qemu-devel@nongnu.org \
                --cc=stefanha@redhat.com   \
                --suppress-cc=all *.patch</code></pre>
                 </div>
-            </div>
             </section>
             <section>
                 <h2 class="alt">Caring for your patches</h2>
+                <div id="list">
                 <ul><li class="fragment">Don't "Fire and forget"
                     <ul><li>Watch email for reviews, comments</li>
                     </ul></li>
@@ -309,6 +313,7 @@ git send-email --to=qemu-devel@nongnu.org \
                     </ul></li>
 
                 </ul>
+                </div>
             </section>
         </section>
 
@@ -319,6 +324,7 @@ git send-email --to=qemu-devel@nongnu.org \
             </section>
             <section>
                 <h2 class="alt">Review Patches</h2>
+                <div id="list">
                 <ul><li class="fragment"> Focus on the code, not the submitter</li>
                     <li class="fragment"> Code syntax</li>
                     <li class="fragment"> Code logic, function</li>
@@ -328,6 +334,8 @@ git send-email --to=qemu-devel@nongnu.org \
                 <li class="fragment">If satisfied, indicate it
                 <ul><li>Reply-all with "Reviewed-by: Your Name <youremail>"</li>
                 </ul></li>
+                </ul>
+                </div>
             </section>
         </section>
 
@@ -338,6 +346,7 @@ git send-email --to=qemu-devel@nongnu.org \
             </section>
             <section>
                 <h2 class="alt">File bug reports</h2>
+                <div id="list">
                 <ul>
                     <li class="fragment">
                         Make sure bug still exists on latest release
@@ -364,6 +373,7 @@ git send-email --to=qemu-devel@nongnu.org \
                         </ul></li>
                         <li class="fragment">More info is better than too little</li>
                     </ul>
+                    </div>
                 </section>
         </section>
 
@@ -374,6 +384,7 @@ git send-email --to=qemu-devel@nongnu.org \
             </section>
             <section>
                 <h2 class="alt">Documentation</h2>
+                <div id="list">
                 <ul>
                     <li class="fragment">Wiki - <a href="http://wiki.qemu.org">http://wiki.qemu.org</a>
                     <ul><li>Ask an existing contributor for an account</li>
@@ -391,6 +402,7 @@ git send-email --to=qemu-devel@nongnu.org \
                     <ul><li>*.texi files</li>
                     </ul></li>
                 </ul>
+                </div>
             </section>
         </section>
 
@@ -411,7 +423,6 @@ git send-email --to=qemu-devel@nongnu.org \
 
     </div>
 
-</div>
 </div>
 
 <script src="lib/js/head.min.js"></script>
