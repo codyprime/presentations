@@ -109,6 +109,20 @@ body {
 .logo-none #logo-black {
   opacity: 0; }
 
+#dark-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  transition: opacity 0.5s ease-out;
+  min-width: 100%;
+  min-height: 100%;
+  left: 0%;
+  top: 0%;
+  opacity: 1;
+  z-index: 1; }
+
+.no-dark-overlay #dark-overlay {
+  opacity: 0; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
