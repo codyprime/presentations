@@ -1,18 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 @import url(https://fonts.googleapis.com/css?family=Roboto%20Slab:400,700,400italic,700italic);
 @import url(http://fonts.googleapis.com/css?family=Changa+One|Righteous|Open+Sans);
+@import url(../../../resources/fonts/overpass.css);
 /**
  * Red Hat theme for reveal.js.
  * Author: Jeff Cody
  * based on solarized dark theme by Achim Staebler
  */
-@font-face {
-  font-family: 'League Gothic';
-  src: url("../../lib/font/league_gothic-webfont.eot");
-  src: url("../../lib/font/league_gothic-webfont.eot?#iefix") format("embedded-opentype"), url("../../lib/font/league_gothic-webfont.woff") format("woff"), url("../../lib/font/league_gothic-webfont.ttf") format("truetype"), url("../../lib/font/league_gothic-webfont.svg#LeagueGothicRegular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
 /**
  * Solarized colors by Ethan Schoonover
  */
@@ -20,29 +14,71 @@ html * {
   color-profile: sRGB;
   rendering-intent: auto; }
 
-body {
-  background-image: url("http://bugnik.us/kvm2013/img/rh-background-slides.png");
-  background-size: cover !important;
-  background-repeat: no-repeat !important; }
+.reveal body {
+  background-image: url("../resources/images/jeffcody-droplet_0893-2500x1406.JPG") !important; }
 
-.reveal .slide-background .videoback {
-  object-fit: fill !important; }
+.reveal #list {
+  color: #eee;
+  -webkit-text-stroke: 1px black;
+  text-shadow: 3px 3px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black; }
+
+.reveal #list ul li {
+  padding: 0 0 5px 0px; }
+
+.reveal #list ul li ul {
+  list-style-image: url("../../../resources/images/nested.png");
+  padding: 5px 0 5px 48px;
+  font-size: 42px; }
+
+.reveal #list ul li ul li {
+  color: #ede490;
+  height: 48px;
+  margin-left: 10px;
+  padding: 0px 0 0px 0; }
+
+.reveal #list ul li ul li ul {
+  list-style-image: none;
+  list-style-type: square; }
+
+.reveal #list ol li {
+  padding: 0 0 5px 0px; }
+
+.reveal #list ol li ol {
+  list-style-image: url("../../../resources/images/nested.png");
+  padding: 5px 0 5px 48px;
+  font-size: 42px; }
+
+.reveal #list ol li ol li {
+  color: #ede490;
+  height: 48px;
+  margin-left: 10px;
+  padding: 0px 0 0px 0; }
+
+.reveal #list ol li ol li ol {
+  list-style-image: none;
+  list-style-type: square; }
 
 .reveal h1.alt,
 .reveal h2.alt {
   margin: 0 0 20px 0;
   color: #eee8d5;
-  font-family: "League Gothic", Impact, sans-serif;
-  line-height: 0.9em;
+  line-height: 1em;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
-  text-shadow: none; }
+  text-transform: none;
+  -webkit-text-stroke: 1px black;
+  color: white;
+  text-shadow: 3px 3px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black; }
+
+.reveal alt {
+  -webkit-text-stroke: 1px black;
+  color: white;
+  text-shadow: 3px 3px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black; }
 
 .reveal h1.alt {
-  font-size: 3.77em; }
+  font-size: 2.00em; }
 
 .reveal h2.alt {
-  font-size: 2.11em; }
+  font-size: 1.5em; }
 
 .reveal pre.alt {
   width: 93%;
@@ -110,7 +146,7 @@ body {
   opacity: 0; }
 
 #dark-overlay {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.2);
   position: absolute;
   transition: opacity 0.5s ease-out;
   min-width: 100%;
@@ -119,6 +155,20 @@ body {
   top: 0%;
   opacity: 1;
   z-index: 1; }
+
+#dark-box {
+  background: rgba(0, 0, 0, 0.7);
+  position: relative;
+  transition: opacity 0.5s ease-out;
+  min-width: 8920px;
+  min-height: 100%;
+  left: -1000px;
+  top: 0%;
+  opacity: 1;
+  z-index: 1; }
+
+#print-only {
+  display: none; }
 
 .no-dark-overlay #dark-overlay {
   opacity: 0; }
@@ -131,8 +181,8 @@ body {
   background-color: #fdf6e3; }
 
 .reveal {
-  font-family: "Lato", sans-serif;
-  font-size: 36px;
+  font-family: "Overpass", Overpass, Helvetica, helvetica, arial, sans-serif;
+  font-size: 48px;
   font-weight: normal;
   letter-spacing: -0.02em;
   color: #eeeeee; }
@@ -158,11 +208,11 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: white;
-  font-family: "League Gothic", Impact, sans-serif;
+  font-family: "Overpass", Overpass, Helvetica, helvetica, arial, sans-serif;
   line-height: 1em;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
-  text-shadow: none;
+  text-transform: none;
+  text-shadow: 3px 3px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   word-wrap: break-word; }
 
 .reveal h1 {

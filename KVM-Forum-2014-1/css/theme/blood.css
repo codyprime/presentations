@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,700,300italic,700italic);
 /**
  * Blood theme for reveal.js
  * Author: Walther http://github.com/Walther
@@ -9,7 +10,6 @@
  * For other themes, change $codeBackground accordingly.
  *
  */
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,700,300italic,700italic);
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -209,9 +209,9 @@ body {
 .reveal a {
   color: #aa2233;
   text-decoration: none;
-  -webkit-transition: color .15s ease;
-  -moz-transition: color .15s ease;
-  transition: color .15s ease; }
+  -webkit-transition: color 0.15s ease;
+  -moz-transition: color 0.15s ease;
+  transition: color 0.15s ease; }
 
 .reveal a:hover {
   color: #dd5566;
@@ -232,9 +232,9 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
 
 .reveal a img {
-  -webkit-transition: all .15s linear;
-  -moz-transition: all .15s linear;
-  transition: all .15s linear; }
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  transition: all 0.15s linear; }
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
@@ -304,11 +304,11 @@ body {
 
 .reveal a,
 .reveal a:hover {
-  text-shadow: 2px 2px 2px #000; }
+  text-shadow: 2px 2px 2px black; }
 
 .reveal small a,
 .reveal small a:hover {
-  text-shadow: 1px 1px 1px #000; }
+  text-shadow: 1px 1px 1px black; }
 
 .reveal p code {
   background-color: #23241f;
