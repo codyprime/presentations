@@ -21,510 +21,415 @@
 
 <!-- If the query includes 'print-pdf', use the PDF print sheet -->
 <script>
-document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
 </script>
 
 <!--[if lt IE 9]>
         <script src="lib/js/html5shiv.js"></script>
         <![endif]-->
+<link rel="import" href="localhost:3000:/init1.html">
 </head>
 
 <body>
 
 <div class="reveal">
+<div id="list">
+    <div id="print-never">
+    <div id="dark-overlay">
+    </div>
+    </div>
     <div id="header-white">
+        <div id="print-never">
         <center>
             <h2>New to QEMU:</h2>
             <h4>A Developer's Guide to Contributing</h4>
             <small>
                 Jeff Cody | <a href="mailto:jcody@redhat.com"> jcody@redhat.com </a>
+                <br>
             </small>
         </center>
+       </div>
     </div>
 
 
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
-        <section data-state="header-visible"
+        <div id="print-only">
+        <section>
+                     <center>
+                         <h2>New to QEMU:</h2>
+                         <h4>A Developer's Guide to Contributing</h4>
+                         <small>
+                             Jeff Cody | <a href="mailto:jcody@redhat.com"> jcody@redhat.com </a>
+                             <br>
+                         </small>
+                     </center>
+          </section>
+      </div>
+         <section data-state="header-visible no-dark-overlay"
                  data-background-video="../resources/videos/qemu-gource-stream.mp4"
                  data-background-video-loop="true"
-                 data-background="#111111" class="videoback">
-
+                 data-background="#111111" id="print-never">
         </section>
 
         <section>
+            <section data-state="no-dark-overlay">
+                <h1 class="alt">About QEMU</h1>
+           </section>
             <section>
-                <h2>First, some background on Block Drivers</h2>
-            </section>
-            <section>
-            <h2>What Is A Block Driver?</h2>
-            <p>
-            A <code>QEMU</code> block driver provides storage on the host, that the guest sees as a drive.
-            </p>
-            <br>
-            <p>In the QEMU code, they are located in the <code>block/</code> directory.</p>
-            </section>
-
-            <section>
-            <h2>The two major block driver types in QEMU</h2>
-            <p>
-            <ul>
-            <li>Image format drivers</li>
-            <li>Protocol based drivers</li>
-            </ul>
-            </p>
-            </section>
-
-            <section>
-            <h2>Image Format Drivers</h2>
-            <p>
-            Provide a structured way to store data, often with built-in features (such as snapshots, data sparseness, drive metadata, etc..).&nbsp;&nbsp;<br>
-            <br>
-            <b>Examples</b>
-            </p>
-            <div style="align: left; background: #fffff0">
-            <p style="align: left">
-            <ul style="align: left">
-                <li style="align: left">QCOW2</li>
-                <li style="align: left">QED</li>
-                <li style="align: left">raw</li>
-                <li style="align: left">etc.</li>
-            </ul>
-            </p>
-            </div>
-            </section>
-
-            <section>
-            <h2>Protocol based drivers: </h2>
-            <p>
-            Provides the underlying data I/O for image formats, although may also be a stand-alone driver as well. &nbsp;&nbsp;
-            <br>
-            <br> Examples include:
-            </p>
-            <div>
-                <div style="width: 50%; background:#fffff0; float: left; padding-bottom: 100%; margin-bottom: -100%" class="fragment">
-                    <p>
-                    <b>Network-based protocols drivers in QEMU: </b>
+                <div class="alt">
+                <h2 class="alt"> Active OSS project:</h2>
+                <div id="list">
+                <ul>
+                    <li class="fragment">
+                    Many contributors
                     <ul>
-                        <li>Gluster</li>
-                        <li>iSCSI</li>
-                        <li>NBD</li>
-                        <li>etc.</li>
-                    </ul>
-                    </p>
-                </div>
-                <div style="width: 50%; background:#f0f0ff; float: right; padding-bottom: 100%; margin-bottom: -100%" class="fragment">
-                    <p>
-                    <b>Host protocols drivers in QEMU: </b>
-                    <ul>
-                        <li>raw-posix files</li>
-                        <li>raw-posix host devices</li>
-                        <li>etc.</li>
-                    </ul>
-                    </p>
-                </div>
+                        <li class="fragment">
+                        ~800 contributors, total</li>
+                        <li class="fragment">
+                        ~330 contributors, over the last year</li>
+                    </ul></li>
+                    <li class="fragment">
+                    ~6000 commits over the last year</li>
+                </ul>
             </div>
-            </section>
-
-            <section>
-                <h2> The BlockDriver struct </h2>
-                <p> The <code><a href=https://github.com/qemu/qemu/blob/v1.6.0/include/block/block_int.h#L83>BlockDriver</a></code> struct contains the block-layer internal API to the format driver.&nbsp;&nbsp; It consists mainly of function pointers, used to interface with the driver. </p>
-                <ul>
-                    <li><code>.bdrv_open</code></li>
-                    <li><code>.bdrv_co_readv</code></li>
-                    <li><code>etc..</code></li>
-                </ul>
-                <br>
-                <br>
-                <p class="fragment"> We'll get into these more later.
-                </p>
-            </section>
-         </section>
-
-         <section>
-             <h2> Core Concepts </h2>
-             <ul>
-                 <li> Probing </li>
-                 <li> Open and Reopen </li>
-                 <li> Coroutines, and Read / Write </li>
-                 <li> Metadata Caching </li>
-                 <li> Image Creation </li>
-                 <li> Data Handling </li>
-                 <li> Backing Files </li>
-                 <li> Testing </li>
-             </ul>
-         </section>
-         <section data-background-image="../resources/images/rh-background-dark-nologo-ufo.png">
-             <section>
-                 <h2 class="alt">The Probe</h2>
-                 <div style="color: #ffffff">
-                 <center>
-                 Driver is passed first 2048 bytes
-             </center>
-                 <br>
-                 <div class="fragment">
-                 <pre class="alt"><code class="alt" data-trim contenteditable>
-00000000  76 68 64 78 66 69 6c 65  51 00 45 00 4d 00 55 00  |vhdxfileQ.E.M.U.|
-00000010  20 00 76 00 31 00 2e 00  36 00 2e 00 35 00 30 00  | .v.1...6...5.0.|
-00000020  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
-                 </code></pre>
-                 <div style="color: #ffffff">VHDX</div>
-             </div>
-                 <br>
-                 <div class="fragment">
-                 <pre class="alt"><code class="alt" data-trim contenteditable>
-00000000  51 46 49 fb 00 00 00 02  00 00 00 00 00 00 00 b8  |QFI.............|
-                 </code></pre>
-                 QCOW2
-             </div>
-                 <br>
-                 <br>
-                 <div class="fragment">
-                 <p style="color: #ffffff">
-                 <ul style="color: #ffffff">
-                     <li> If first 2K is not enough, probe won't work. </li>
-                     <li> Return a confidence score from 0-100.  </li>
-                 </ul>
-                 </p>
-             </div>
-             </div>
-             </section>
-             <section>
-                 <h2 class="alt">The Probe</h2>
-
-                 <pre class="alt"><code class="alt" data-trim contenteditable>
-static int qcow2_probe(const uint8_t *buf, int buf_size, const char *filename)
-{
-    const QCowHeader *cow_header = (const void *)buf;
-
-    if (buf_size >= sizeof(QCowHeader) &&
-        be32_to_cpu(cow_header->magic) == QCOW_MAGIC &&
-        be32_to_cpu(cow_header->version) >= 2)
-        return 100;
-    else
-        return 0;
-}
-                 </code></pre>
-             </section>
-        </section>
-         <section>
-             <section>
-                 <h2>The BlockDriver Open Flow</h2>
-                 <p>
-                 (Simplified view, as relevant to an Image Format Driver)
-                 </p>
-                 <a href="../resources/images/SimpleOpenFlow.png"><img src="../resources/images/SimpleOpenFlow.png"  height="100%"></a>
-                 <p>
-                 </p>
-             </section>
-
-             <section>
-                 <h2> Let's Jump In </h2>
-                 <h3> Implementing a (very basic!) Image Format Driver </h3>
-             </section>
-
-             <section>
-                 <h2> Creating a new format - the "silly" format </h2>
-                 <p> At the minimum, we need: </p>
-                 <ul>
-                     <li> block_init(), for our driver to be seen </li>
-                     <li> To define our BlockDriver, and register it via bdrv_register() </li>
-                     <li> A format name (ours is "silly") </li>
-                     <li> In our BlockDriver, we must at least have a &nbsp; .bdrv_open() implementation </li>
-                 </ul>
-                 <br>
-                 <br>
-                 <br>
-                 <br>
-                 <br>
-                 <p class="fragment">
-                 Let's see this as code.
-                 </p>
-             </section>
-             <section>
-                 <pre class="alt"><code class="alt" data-trim contenteditable>
-#include "block/block_int.h"
-
-/* Our open function */
-static int silly_open(BlockDriverState *bs, QDict *options, int flags,
-                      Error **errp)
-{
-    return 0;
-}
-
-/* Our attributes / functions */
-static BlockDriver bdrv_silly = {
-    .format_name    = "silly",
-    .bdrv_open      = silly_open
-};
-
-/* register our BlockDrivers */
-static void bdrv_silly_init(void)
-{
-    bdrv_register(&bdrv_silly);
-}
-
-/* macro magic, creates an init function */
-block_init(bdrv_silly_init);
-                 </code></pre>
-             </section>
-
-         </section>
-
-
-         <section>
-            <section>
-                <h2> Your Driver's Stateful Data </h2>
-                <p>
-                Most Block Drivers require state data, populated on open.
-                </p>
-                <ul>
-                    <li> Provided via BlockDriverState .opaque field </li>
-                    <li> Size is specified in  BlockDriver struct, &nbsp;.instance_size </li>
-                    <li> Not allocated by your driver, but by the block layer </li>
-                </ul>
-                <br>
-                <br>
-                <p>
-                The BlockDriverState struct is passed to most functions.  The "opaque" field is for your driver's internal data.
-                </p>
-            </section>
-            <section>
-                <h2> What your open must provide </h2>
-                <p>
-                At a minimum, your .bdrv_open must:
-                </p>
-                <ul>
-                    <li> Verify the integrity of the image, if relevant </li>
-                    <li> Populate your internal state data ("opaque") </li>
-                    <li> Total sectors, if relevant for your driver </li>
-                </ul>
-            </section>
-            <section>
-                <h2> Reopen functionality </h2>
-                <p> Reopen allows QEMU to open an image chain with different flags
-                <ul>
-                    <li> Live snapshots </li>
-                    <li> Block commit </li>
-                    <li> etc.. </li>
-                </ul></p>
-                <br>
-                <div class="fragment">
-                <p> Reopen has three hooks:
-                <ul>
-                    <li>  Prepare (.bdrv_reopen_prepare) </li>
-                    <li>  Commit (.bdrv_reopen_commit) </li>
-                    <li>  Abort (.bdrv_reopen_abort) </li>
-            </ul></p></div>
-            </section>
-            <section>
-                <h2> Reopen functionality </h2>
-                <br>
-                <align left>
-                <p> <code>.bdrv_reopen_prepare()</code>, required if reopen supported
-                <ul>
-                    <li> Returns 0 for success - stub OK</li>
-                    <li> Protocols will likely have more to do</li>
-                </ul>  </p>
-                <br>
-                <p> Depending on what your driver needs to support reopen, you may also need to provide the commit and abort functions, but these are optional <p>
-            </section>
-        </section>
-
-        <section>
-            <section>
-                <h2>Coroutines, and Read / Write</h2>
-                <p>
-                Block driver read / write operations all make use of coroutines
-                </p>
-            </section>
-            <section>
-                <h2>What are coroutines?</h2>
-                <p>Coroutines allow asynchronous code to masquerade as synchronous code</p>
-                <br>
-                <p>(Despite sounding complex, this makes life easier for you!)</p>
-                <br>
-                <p>Control stays with your coroutine until you either yield, or return</p>
-            </section>
-            <section>
-                <h2>How does my driver use coroutines?</h2>
-                <p><ul>
-                    <li> Take CoMutex when needed (<code>qemu_co_mutex_lock</code>)</li>
-                    <li> Yield if needed (<code>qemu_coroutine_yeild()</code>)
-                    <li class="fragment"> Everything uses coroutines </li>
-                </ul>
-            </section>
-             <section>
-                 <h2>The BlockDriver Read Flow</h2>
-                 <p>
-                 Simplied read flow, for an Image Format driver using I/O vectors
-                 </p>
-                 <a href="../resources/images/ReadFlow.png"><img src="../resources/images/ReadFlow.png"  height="100%"></a>
-                 <p>
-                 </p>
-             </section>
-             <section>
-                 <h2>The BlockDriver Write Flow</h2>
-                 <p>
-                 Simplied write flow, for an Image Format driver using I/O vectors
-                 </p>
-                 <a href="../resources/images/WriteFlow.png"><img src="../resources/images/WriteFlow.png"  height="100%"></a>
-                 <p>
-                 </p>
-             </section>
-        </section>
-
-        <section>
-            <section>
-            <h2>Metadata Caching</h2>
-            <p style="align: center">
-            <center> Block Drivers will often cache image format metadata</center>
-            </p>
-            <br>
-            <br>
-            <div class="fragment">
-            <p><b>This can cause problems</b></p>
-            <p>
-            During Live Migration, the image format metadata may differ from your cache.
-            </p>
         </div>
             </section>
             <section>
-            <h2>Metadata Cache Flushing</h2>
-            <p>
-            You can either invalidate the metadata when requested, or prevent migration
-            </p>
-            <br>
-            <p>
-            <div class="fragment">
-            <ul>
-                <li> .bdrv_invalidate_cache() </li>
-                <li> migrate_add_blocker() </li>
-            </ul>
+                <h2 class="alt"> Development Flow </h2>
+                <ul>
+                    <li class="fragment">Primarily email driven
+                    <ul>
+                        <li class="fragment">
+                        Devel list: <a href="https://lists.nongnu.org/mailman/listinfo/qemu-devel">qemu-devel@nongnu.org</a></li>
+                        <li class="fragment">
+                        Trivial patches: <a href="https://lists.nongnu.org/mailman/listinfo/qemu-trivial">qemu-trivial@nongnu.org</a></li>
+                    </ul></li>
+                    <li class="fragment">Uses <code>git</code>, of course
+                    <ul><li>
+                        <a href="http://git.qemu.org">git://git.qemu.org/qemu.git</a>
+                    </ul></li></li>
+                    <li class="fragment">
+                    Bugs tracked on Launchpad
+                    <ul><li>
+                        <a href="https://bugs.launchpad.net/qemu/">https://bugs.launchpad.net/qemu/</a></li>
+                    </ul></li>
+                    <li class="fragment">
+                    The wiki is a great guide
+                    <ul>
+                        <li class="fragment">
+                        <a href="http://wiki.qemu.org/Contribute/StartHere">http://wiki.qemu.org/Contribute/StartHere</a></li>
+                    </ul>
+                    <li class="fragment">
+                    IRC &mdash; <code>#qemu</code> on <a href="http://www.oftc.net/">irc.oftc.net</a>
+                    </li>
+                </ul>
+            </section>
+        </section>
+
+        <section>
+            <section data-state="no-dark-overlay">
+                <h1 class="alt"> Contributing </h1>
+            </section>
+            <section>
+                <h2 class="alt"> How can you contribute? </h2>
+                <div id="list">
+                    <ul align="left">
+                        <li class="fragment">Submit patches</li>
+                        <li class="fragment">Review patches</li>
+                        <li class="fragment">Documentation</li>
+                        <li class="fragment">File bug reports</li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <section data-state="no-dark-overlay">
+                <h1 class="alt">Creating Patches</h1>
+                <img src="../resources/images/bunny-programming.gif" height=500px class="fragment" id="print-never">
+            </section>
+            <section>
+                <h2 class="alt">Patch process overview</h2>
+                <a href="../resources/images/qemu-submit-flow.png">
+                    <img src="../resources/images/qemu-submit-flow.png" style="border:0; background: rgba(255,255,255,0); width: 100%"></a>
+           </section>
+            <section>
+                <h2 class="alt">Creating Quality Patches</h2>
+                <ul>
+                    <li class="fragment">Each individual patch is a logical changeset
+                    <ul>
+                        <li class="fragment">Avoid lumping multiple things in one patch</li>
+                    </ul></li>
+                    <li class="fragment">Each patch compiles &amp; works
+                    <ul>
+                        <li class="fragment"> Don't break <code>git-bisect</code></li>
+                        <li class="fragment"> Your series may be partially applied</li>
+                        <li class="fragment"> Tools such as <code>git-compile-check</code> may be useful
+                        <ul><li class="fragment"><a href="https://github.com/codyprime/git-scripts/blob/master/git-compile-check">git-compile-check on github</a>
+                        </ul></li></li>
+                    </ul></li>
+                </ul>
+            </section>
+            <section>
+                <div align="left">
+                    <h2 class="alt">Creating Quality Patches</h2>
+                    <ul>
+                        <li class="fragment">Meaningful commit messages
+                        <ul>
+                            <li class="fragment">Commit message gives the 'why'</li>
+                            <li class="fragment">First line is the subject</li>
+                            <li class="fragment">Indicate subsystem by first word
+                            <ul><li>e.g. "block:", "pci:", etc..
+                            </li></ul></li>
+                        </ul></li>
+                    </ul>
+                    <ul>
+                        <li class="fragment">Make sure patch is against <code>master</code>
+                        <ul><li class="fragment">
+                            Rebase to master for your revisions
+                        </li></ul></li>
+                        <li class="fragment">Each patch follows coding guidelines
+                        <ul class="fragment">
+                            <li><code>./scripts/checkpatch.pl</code></li>
+                            <li><code>codespell</code></li>
+                        </ul></li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <pre class="alt" style="background: #111111;
+width: 100%; border: 10px solid #33bb33;">
+commit 9aebf3b89281a173d2dfeee379b800be5e3f363e 
+Author: Kevin Wolf &lt;kwolf@redhat.com&gt; 
+Date:   Thu Sep 25 09:54:02 2014 +0200
+
+    block: Validate node-name
+    
+    The device_name of a BlockDriverState is currently
+    checked because it is always used as a QemuOpts ID and
+    qemu_opts_create() checks whether such IDs are wellformed.
+
+    node-name is supposed to share the same namespace, but
+    it isn't checked currently. This patch adds explicit checks
+    both for device_name and node-name so that the same rules
+    will still apply even if QemuOpts won't be used any more at
+    some point.
+    
+    qemu-img used to use names with spaces in them, which
+    isn't allowed any more. Replace them with underscores.
+    
+    Signed-off-by: Kevin Wolf &lt;kwolf@redhat.com&gt;
+    Reviewed-by: Stefan Hajnoczi &lt;stefanha@redhat.com&gt;</pre>
+
+            </section>
+            <section>
+                <pre class="alt" style="background: #111111;
+width: 100%; border: 10px solid #bb3333;">
+Author: Some User &lt;user@qemu.org&gt; 
+Date:   Thu Sep 25 09:54:02 2014 +0200
+
+    block: new function open_fragile_bits()
+    
+    Implement open_fragile_bits() for block layer.
+
+    Signed-off-by: Some Userf &lt;user@qemu.org&gt;
+
+            </section>
+            <section>
+                <div align="left">
+                    <h2 class="alt">Formatting Your Patches</h2>
+                    <ul>
+                        <li class="fragment">Sign your patch!
+                        <ul><li class="fragment">Must have <code>Signed-off-by:<br>
+                                Your Name &lt;your@email.address&gt;
+                            </code>
+                        </li></ul></li>
+                    </ul>
+                    <ul>
+                        <li class="fragment">For patch series, include a cover letter
+                        <ul><li class="fragment">Also useful to thread the emails
+                        </li></ul></li>
+                        <li class="fragment">Easiest way is to use <code>git-format-patch</code></li>
+                    </ul>
+                </div>
+                <div align="left" class="fragment">
+                <br>
+                <pre class="alt"> <code># For example:
+git format-patch --subject-prefix="PATCH" -s \
+                 --find-renames --thread     \
+                 --cover my_branch..</code></pre>
+                </div>
+            </section>
+            <section>
+                <div align="left">
+                <h2 class="alt">Sending out the patches</h2>
+                <ul>
+                    <li class="fragment">Send patches inline
+                    <ul><li> (not as attachments)</li>
+                    </ul></li>
+                    <li class="fragment">CC maintainers for your changes
+                    <ul><li class="fragment">see MAINTAINERS file</li>
+                        <li class="fragment"><code>./scripts/get_maintainer.pl</code></li>
+                    </ul></li>
+                </ul>
+                <ul>
+                    <li class="fragment">Recommended <code>git send-email</code>
+                    <ul><li class="fragment">Other mail agents may munge the patches</li>
+                    </ul></li>
+                </ul> 
+                <div align="left" class="fragment">
+                <pre class="alt"> <code># For example:
+git send-email --to=qemu-devel@nongnu.org \
+               --cc=kwolf@redhat.com      \
+               --cc=stefanha@redhat.com   \
+               --suppress-cc=all *.patch</code></pre>
+                </div>
             </div>
             </section>
+            <section>
+                <h2 class="alt">Caring for your patches</h2>
+                <ul><li class="fragment">Don't "Fire and forget"
+                    <ul><li>Watch email for reviews, comments</li>
+                    </ul></li>
+                    <li class="fragment">If you get a review, address it
+                    <ul><li class="fragment">If you don't agree with feedback, respond with why</li>
+                    </ul></li>
+                </ul>
+                <ul>
+                    <li class="fragment">Always use Reply-all</li>
+                    <li class="fragment">If you <strong>don't</strong> get a review, don't fret
+                    <ul><li>Wait several days, and then ping
+                        <ul><li>Ask a non-maintainer to review, if appropriate</li>
+                        </ul</li>
+                    </ul></li>
+
+                </ul>
+            </section>
         </section>
 
         <section>
-            <h2>BlockDriver Image File Creation</h2>
-            <br><br><br>
-            <ul>
-                <li> Implement .bdrv_create() </li>
-                <div class="fragment">
-                <li> Define QEMUOptionParameter </li>
-                    <div style="width: 50%; background: #f0f0f0; float: left"> Size</div> <div style="width: 50%; background: #fffff0; float: right"> OPT_SIZE </div>
-                    <div style="width: 50%; background: #f0f0f0; float: left"> String</div> <div style="width: 50%; background: #fffff0; float: right"> OPT_STRING </div>
-                    <div style="width: 50%; background: #f0f0f0; float: left"> Flag</div> <div style="width: 50%; background: #fffff0; float: right"> OPT_FLAG </div>
-                    <div style="width: 50%; background: #f0f0f0; float: left"> Number</div> <div style="width: 50%; background: #fffff0; float: right"> OPT_NUMBER </div>
-            </ul>
+            <section data-state="no-dark-overlay">
+                <h2 class="alt">Review Patches</h2>
+                <img src="../resources/images/laugh-code.gif" height=500px class="fragment" id="print-never">
+            </section>
+            <section>
+                <h2 class="alt">Review Patches</h2>
+                <ul><li class="fragment"> Focus on the code, not the submitter</li>
+                    <li class="fragment"> Code syntax</li>
+                    <li class="fragment"> Code logic, function</li>
+                    <li class="fragment"> Challenge yourself to find bugs!
+                    <ul><li class="fragment">But no need for excessive bike-shedding</li>
+                </ul></li>
+                <li class="fragment">If satisfied, indicate it
+                <ul><li>Reply-all with "Reviewed-by: Your Name <youremail>"</li>
+                </ul></li>
+            </section>
         </section>
 
         <section>
-            <h2> Sample BlockDriver Struct </h2>
-                 <pre class="alt"><code class="alt" data-trim contenteditable>
-static BlockDriver bdrv_qcow2 = {
-    .format_name          = "qcow2",
-    .instance_size        = sizeof(BDRVQcowState),
-    .bdrv_probe           = qcow2_probe,
-    .bdrv_open            = qcow2_open,
-    .bdrv_close           = qcow2_close,
-    .bdrv_reopen_prepare  = qcow2_reopen_prepare,
-    .bdrv_create          = qcow2_create,
-
-/* snipped */
-
-    .bdrv_co_readv          = qcow2_co_readv,
-    .bdrv_co_writev         = qcow2_co_writev,
-    .bdrv_co_flush_to_os    = qcow2_co_flush_to_os,
-
-/* more snipped */
-    .create_options = qcow2_create_options,
-};  
-                 </code></pre>
-        </section>
-        <section>
-            <section>
-                <h2> Data Handling </h2>
-                <p> If you are reading or writing data structures from / to disk, please: </b>
-                <ul>
-                    <li> Don't trust it </li>
-                    <li> Do pack it </li>
-                    <li> Do convert endian </li>
-                </ul>
+            <section data-state="no-dark-overlay">
+                <h2 class="alt">File bug reports</h2>
+                <img src="../resources/images/bug.gif" height=500px class="fragment" border=0 id="print-never">
             </section>
             <section>
-                <h2> Don't Trust That Data </h2>
-                <p> Unvalidated data can be security risks: </p>
+                <h2 class="alt">File bug reports</h2>
                 <ul>
-                    <li> We don't want to allocate more memory than expected (DoS) </li>
-                    <li> We don't want to read / write past buffers (overflows) </li>
-                    <li> We don't want to crash QEMU </li>
-                </ul>
-            </section>
-            <section>
-                <h2> Packing and Endian conversion </h2>
-                <p> Make sure that your driver will work on all platforms </p>
-                <ul>
-                    <li> Use QEMU_PACKED on structures read/written from disk </li>
-                    <li> Convert endiannes for on-disk fields </li>
-                </ul>
-                <br>
-                <br>
-                <p> If you don't do this, your driver may work fine on your system.
-                <ul>
-                    <li>  But maybe not other systems </li>
-                </ul> </p>
-            </section>
-        </section>
-
-        <section> 
-            <section>
-                <h2> Backing Files </h2>
-                    <ul>
-                        <li>Populate bs->backing_file</li>
-                        <li>Implement <code>.bdrv_co_get_block_status</code></li>
+                    <li class="fragment">
+                        Make sure bug still exists on latest release
+                        <ul><li class="fragment">
+                            git master is even better
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="fragment">
+                        Provide all relevant info:
+                        <ul>
+                            <li class="fragment">
+                            QEMU command line
+                            </li>
+                            <li class="fragment">
+                            Libvirt? oVirt? OpenStack?  </li>
+                        </ul></li>
+                        <li class="fragment">What were you doing
+                        <ul><li class="fragment">QAPI command?</li>
+                            <li class="fragment">Host system logs?</li>
+                        </ul></li>
+                        <li class="fragment">What were you running it on?
+                        <ul><li class="fragment">What guest, too?</li>
+                        </ul></li>
+                        <li class="fragment">More info is better than too little</li>
                     </ul>
-            </section>
+                </section>
         </section>
 
-        <section> 
+        <section>
+            <section data-state="no-dark-overlay">
+                <h2 class="alt">Documentation</h2>
+                <img src="../resources/images/house-document.gif" height=500px class="fragment" id="print-never">
+            </section>
             <section>
-                <h2> Testing </h2>
+                <h2 class="alt">Documentation</h2>
                 <ul>
-                    <li>Use qemu-iotests</li>
-                    <ul>
-                        <li> Create test in tests/qemu-iotests </li>
-                        <li> Bash or Python </li>
-                        <li> Put test in 0##, and expected output in 0##.out </li>
-                    </ul>
-                    <br>
-                    <li>Sample Images</li>
-                    <ul>
-                        <li> For a compatibility driver, test against source </li>
-                    </ul>
+                    <li class="fragment">Wiki - <a href="http://wiki.qemu.org">http://wiki.qemu.org</a>
+                    <ul><li>Ask an existing contributor for an account</li>
+                        <li> Or, ask on qemu-devel@nongnu.org </li>
+                    </ul></li>
+                    <li class="fragment"><code>docs/</code>
+                    <ul><li>In the git repo</li>
+                    </ul></li>
+                    <li class="fragment">In JSON / QMP / HMP files
+                    <ul><li>qapi-schema.json</li>
+                        <li>qapi/*.json</li>
+                        <li>*.hx</li>
+                    </ul></li>
+                    <li class="fragment">Man pages
+                    <ul><li>*.texi files</li>
+                    </ul></li>
                 </ul>
             </section>
         </section>
 
-        <section> 
-                <h2> There is much more! </h2>
-                <p> Look at BlockDriver struct in include/block/block_int.h </p>
+        <section>
+            <section data-state="no-dark-overlay">
+                <h2 class="alt">Questions?</h2>
+                <img src="../resources/images/simpsons.gif" height=500px class="fragment" id="print-never">
+            </section>
         </section>
 
-        <section>
-            <h1>THE END</h1>
-            <h3>Jeff Cody | Red Hat, Inc.</h3>
+
+        <section data-state="no-dark-overlay">
+            <h1 class="alt">THE END</h1>
+            <hr>
+            <h4>Jeff Cody | <font color=#cb2026> Red Hat,
+                    Inc.</font></h4>
         </section>
 
     </div>
 
 </div>
+</div>
 
 <script src="lib/js/head.min.js"></script>
 <script src="js/reveal.min.js"></script>
 
+<div id="initializer">
+<!-- grabstart -->
 <script>
 
+var printaction = window.location.search.match( /print-pdf/gi ) ? 'printing' : '';
+var parallaxImage;
+if (printaction) {
+    document.body.style.backgroundImage="url('../resources/images/jeffcody-droplet_0867-1056x769.JPG')";
+    document.body.style.backgroundRepeat="repeat-y";
+} else {
+    //parallaxImage = '../resources/images/jeffcody-droplet_0893-2500x1406.JPG';
+    parallaxImage = '../resources/images/jeffcody-droplet_0867-2500x1406-dark.JPG';
+}
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
@@ -536,23 +441,47 @@ center: true,
 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
 
-parallaxBackgroundImage: '../resources/images/jeffcody-droplet_0893-3700x2081.JPG',
-parallaxBackgroundSize: '3700px 2081px',
+parallaxBackgroundImage: parallaxImage,
+parallaxBackgroundSize: '2500px 1406px',
+
+multiplex: {
+    // Example values. To generate your own, see the socket.io server instructions.
+    secret: 'null', // Obtained from the socket.io server. Gives this (the master) control of the presentation
+    id: 'e74af6d20e374e17', // Obtained from socket.io server
+    url: 'revealjs.jit.su:80' // Location of socket.io server
+},
+
 
 // Optional libraries used to extend on reveal.js
 //     { src: 'http://revealjs.jit.su/socket.io/socket.io.js', async: true }, 
 dependencies: [
-     { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-     { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-     { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-     { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-     { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-     { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-     { src: 'plugin/multiplex/client.js', async: true },
-     { src: 'plugin/multiplex/master.js', async: true }
-     ]
+{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+{ src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.10/socket.io.min.js', async: true },
+{ src: 'plugin/multiplex/client.js', async: true },
+{ src: 'plugin/multiplex/master.js', async: true }
+]
 });
 
+</script>
+<!-- grabend -->
+</div>
+
+<script>
+var link = document.querySelector('link[rel="import"]');
+var content = link.import;
+
+var template = link.import.querySelector('template');
+var clone = document.importNode(template.content, true);
+
+if (clone) {
+    document.querySelector('#initializer').innerHTML = '';
+    document.querySelector('#initializer').appendChild(clone);
+}
 </script>
 
 </body>
