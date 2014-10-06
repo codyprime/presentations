@@ -207,8 +207,7 @@ var link = document.createElement( 'link' );
                 </div>
             </section>
             <section>
-                <pre class="alt" style="background: #111111;
-width: 100%; border: 10px solid #33bb33;">
+                <pre class="alt" style="background: rgba(0,0,0,0.8); width: 100%; border: 10px solid #33bb33;">
 commit 9aebf3b89281a173d2dfeee379b800be5e3f363e 
 Author: Kevin Wolf &lt;kwolf@redhat.com&gt; 
 Date:   Thu Sep 25 09:54:02 2014 +0200
@@ -233,8 +232,7 @@ Date:   Thu Sep 25 09:54:02 2014 +0200
 
             </section>
             <section>
-                <pre class="alt" style="background: #111111;
-width: 100%; border: 10px solid #bb3333;">
+                <pre class="alt" style="background: rgba(0,0,0,0.8); width: 100%; border: 10px solid #bb3333;">
 Author: Some User &lt;user@qemu.org&gt; 
 Date:   Thu Sep 25 09:54:02 2014 +0200
 
@@ -264,7 +262,7 @@ Date:   Thu Sep 25 09:54:02 2014 +0200
                 </div>
                 <div align="left" class="fragment">
                 <br>
-                <pre class="alt"> <code># For example:
+                <pre class="alt"># For example:
 git format-patch --subject-prefix="PATCH" -s \
                  --find-renames --thread     \
                  --cover my_branch..</code></pre>
@@ -289,7 +287,7 @@ git format-patch --subject-prefix="PATCH" -s \
                 </ul> 
                 </div>
                 <div align="left" class="fragment">
-                <pre class="alt"> <code># For example:
+                <pre class="alt"># For example:
 git send-email --to=qemu-devel@nongnu.org \
                --cc=kwolf@redhat.com      \
                --cc=stefanha@redhat.com   \
