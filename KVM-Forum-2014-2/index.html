@@ -169,16 +169,20 @@ bdrv_op_block_all(bs->backing_hd, bs->backing_blocker);
 bdrv_op_unblock(bs->backing_hd, BLOCK_OP_TYPE_COMMIT,
                 bs->backing_blocker);
                     </code></pre>
-                    <div id="list">
-                        <ul>
-                            <li class="fragment">Not set or checked recursively
-                            <ul><li class="fragment">
-                                Many block jobs operate on multiple nodes
-                                <ul><li class="fragment">"Honor system"</li>
-                                </ul></li>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="alt">Current Issues</h2>
+                <div id="list">
+                    <ul>
+                        <li class="fragment">Not set or checked recursively
+                        <ul><li class="fragment">
+                            Many block jobs operate on multiple nodes
+                            <ul><li class="fragment">"Honor system"</li>
                             </ul></li>
-                        </ul>
-                    </div>
+                        </ul></li>
+                    </ul>
                 </div>
             </section>
 
