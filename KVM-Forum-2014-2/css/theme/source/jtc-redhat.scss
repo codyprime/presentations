@@ -94,11 +94,14 @@ $mainFontSize: 48px;
 
 .reveal #list ul li { padding: 0 0 5px 0px; } 
 .reveal #list ul li ul { list-style-image: url("../../../resources/images/nested.png"); padding:5px 0 5px 48px; font-size:42px }
+.reveal #list ul li ul #straight{ list-style-image: url("../../../resources/images/nested-straight.png"); padding:0px 0 5px 48px; font-size:42px }
 .reveal #list ul li ul li { color:#ede490; height: 48px; margin-left:10px; padding:0px 0 0px 0;}
-.reveal #list ul li ul li ul { list-style-image: none; list-style-type: square; }
+.reveal #list ul li ul li ul { list-style-image: none; list-style-type: square; padding:0px 0 5px 0; font-size: 42px}
+.reveal #list ul li ul li ul li { color:#ede490; height: 48px; margin-left:10px; padding:0px 0 0px 0;}
 
 .reveal #list ol li { padding: 0 0 5px 0px; } 
 .reveal #list ol li ol { list-style-image: url("../../../resources/images/nested.png"); padding:5px 0 5px 48px; font-size:42px }
+.reveal #list #straight ol li ol { list-style-image: url("../../../resources/images/nested-straight.png"); padding:5px 0 5px 48px; font-size:42px }
 .reveal #list ol li ol li { color:#ede490; height: 48px; margin-left:10px; padding:0px 0 0px 0;}
 .reveal #list ol li ol li ol { list-style-image: none; list-style-type: square; }
 
@@ -139,13 +142,26 @@ $mainFontSize: 48px;
   font-size: 1.5em; }
 
 .reveal pre.alt {
-    width: 93%;
+    height: 100%;
+    max-height: 100%;
+
+    font-size: 0.45em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    background: rgba(0,0,0,0.5);
 	box-shadow: -10px 10px 40px rgba(0,0,0,0.9);
 }
 
 .reveal pre code.alt {
-    overflow: visible;
-    max-height: 900px;
+    height: 100%;
+    max-height: 100%;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: rgba(255,255,255,0);
 }
 
 #header-white {
