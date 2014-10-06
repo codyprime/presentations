@@ -98,16 +98,17 @@ var link = document.createElement( 'link' );
                         <code>bs-&gt;in_use</code>
                         <ul>
                             <li class="fragment">v0.15.0 up to v2.1.0</li>
-                            </li>
                             <li class="fragment">Boolean
                             <ul>
                                 <li class="fragment">Blocks all block jobs on a BDS</li>
-                            </ul>
-                            <li class="fragment" id="straight"></li>
-                            <li class="fragment">
-                            Only single BDS was checked, at the top layer.
-                            </li>
-                        </ul>
+                            </ul></li>
+                            <div class="fragment">
+                                <li id="straight"></li>
+                                <li>
+                                Only single BDS was checked, at the top layer.
+                                </li>
+                            </div>
+                        </ul></li>
                     </ul>
                 </div>
             </section>
@@ -274,9 +275,8 @@ bdrv_op_unblock(bs->backing_hd, BLOCK_OP_TYPE_COMMIT,
 var printaction = window.location.search.match( /print-pdf/gi ) ? 'printing' : '';
 var parallaxImage;
 if (printaction) {
-    //document.body.style.backgroundImage="url('../resources/images/jeffcody-droplet_0867-1056x769.JPG')";
-    //document.body.style.backgroundRepeat="repeat-y";
-    parallaxImage = '../resources/images/729665main_A-BlackHoleArt-pia16695_full.jpg';
+    document.body.style.backgroundImage="url('../resources/images/729665main_A-BlackHoleArt-pia16695_1056x759.jpg')";
+    document.body.style.backgroundRepeat="repeat-y";
 } else {
     //parallaxImage = '../resources/images/jeffcody-droplet_0893-2500x1406.JPG';
     parallaxImage = '../resources/images/729665main_A-BlackHoleArt-pia16695_full.jpg';
