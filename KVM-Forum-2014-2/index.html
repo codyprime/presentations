@@ -43,8 +43,23 @@ var link = document.createElement( 'link' );
     <a id="logo-black"><img src="../resources/images/Red_Hat_RGB_reverse.png" alt=""/></a>
     <a id="logo-white"><img src="../resources/images/Red_Hat_RGB.png" alt=""/></a>
 
+    <div id="header-white">
+        <div id="print-never">
+            <center>
+                <h2>Job Safety:</h2>
+                <h4>Blockers in the Block Layer</h4>
+                <small>
+                    Jeff Cody | <a href="mailto:jcody@redhat.com"> jcody@redhat.com </a>
+                    <br>
+                    Presentation available at: <a href="http://qemu.rocks">http://qemu.rocks</a>
+                </small>
+            </center>
+        </div>
+    </div>
+
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
+        <div id="print-only">
         <section data-state="no-dark-overlay">
             <center>
                 <h2>Job Safety:</h2>
@@ -55,6 +70,9 @@ var link = document.createElement( 'link' );
                     Presentation available at: <a href="http://qemu.rocks">http://qemu.rocks</a>
                 </small>
             </center>
+        </div>
+        </section>
+        <section data-state="header-visible no-dark-overlay" id="print-never">
         </section>
 
         <section>
