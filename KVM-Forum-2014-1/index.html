@@ -51,6 +51,7 @@ var link = document.createElement( 'link' );
             <small>
                 Jeff Cody | <a href="mailto:jcody@redhat.com"> jcody@redhat.com </a>
                 <br>
+                Presentation available at: <a href="http://qemu.rocks">http://qemu.rocks</a>
             </small>
         </center>
        </div>
@@ -67,6 +68,7 @@ var link = document.createElement( 'link' );
                          <small>
                              Jeff Cody | <a href="mailto:jcody@redhat.com"> jcody@redhat.com </a>
                              <br>
+                             Presentation available at: <a href="http://qemu.rocks">http://qemu.rocks</a>
                          </small>
                      </center>
           </section>
@@ -254,6 +256,21 @@ Date:   Thu Sep 25 09:54:02 2014 +0200
                         </li></ul></li>
                     </ul>
                     <ul>
+                        <li class="fragment">Subject line prefix
+                        <ul>
+                            <li class="fragment">[PATCH]</li>
+                            <li class="fragment">[PATCH v2]</li>
+                            <li class="fragment">[PATCH v2 1/8]
+                            <ul>
+                                <li class="fragment"> Cover letter is 0</li>
+                            </ul></li>
+                        </ul></li>
+                     </ul>
+                </div>
+             </section>
+             <section>
+                <div align="left" id="list">
+                    <h2 class="alt">Formatting Your Patches</h2>
                         <li class="fragment">For patch series, include a cover letter
                         <ul><li class="fragment">Also useful to thread the emails
                         </li></ul></li>
@@ -261,7 +278,6 @@ Date:   Thu Sep 25 09:54:02 2014 +0200
                     </ul>
                 </div>
                 <div align="left" class="fragment">
-                <br>
                 <pre class="alt"># For example:
 git format-patch --subject-prefix="PATCH" -s \
                  --find-renames --thread     \
@@ -307,8 +323,8 @@ git send-email --to=qemu-devel@nongnu.org \
                 <ul>
                     <li class="fragment">Always use Reply-all</li>
                     <li class="fragment">If you <strong>don't</strong> get a review, don't fret
-                    <ul><li>Wait several days, and then ping
-                        <ul><li>Ask a non-maintainer to review, if appropriate</li>
+                    <ul><li class="fragment">Wait several days, and then ping
+                        <ul><li class="fragment">Ask a non-maintainer to review, if appropriate</li>
                         </ul</li>
                     </ul></li>
 
@@ -419,6 +435,9 @@ git send-email --to=qemu-devel@nongnu.org \
             <hr>
             <h4>Jeff Cody | <font color=#cb2026> Red Hat,
                     Inc.</font></h4>
+            <small>
+                Presentation available at: <a href="http://qemu.rocks">http://qemu.rocks</a>
+            </small>
         </section>
 
     </div>
