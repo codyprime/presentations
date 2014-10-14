@@ -52,6 +52,7 @@ var link = document.createElement( 'link' );
                 <small>
                     Jeff Cody | <a href="mailto:jcody@redhat.com"> jcody@redhat.com </a>
                     <br>
+                    Presentation available at: <a href="http://qemu.rocks">http://qemu.rocks</a>
                 </small>
             </center>
         </section>
@@ -237,12 +238,92 @@ bdrv_op_unblock(bs->backing_hd, BLOCK_OP_TYPE_COMMIT,
                     <br><br><em><font color=#55aa22>TODO: More slides expanding on this</font></em>
                 </div>
             </section>
+        </section>
 
+        <section>
             <section>
-                <h2> Possible Future Changes </h2>
-                <div id="list">
-                    <br><br><em><font color=#55aa22>TODO: Several more slides expanding on this</font></em>
+                <h2> QEMU 2.3+ </h2>
+            </section>
+            <section>
+                <h3>Obtain blocker by action</h3>
+                <div id="list" align="left">
+                <ul>
+                    <li class="fragment">On each BDS:
+                    <ul>
+                        <li class="fragment">Read / Write</li>
+                        <li class="fragment">Graph Modify</li>
+                        <li class="fragment">Attributes</li>
+                    </ul></li>
+                </ul>
+                <ul>
+                    <li class="fragment">Blockers obtained atomically
+                    <ul><li class="fragment">Obtain blocker on multiple BDSs
+                        <ul><li class="fragment">First, check if we can obtain a block
+                            <ul><li class="fragment">All-or-none</li>
+                            </ul></li>
+                        </ul></li>
+                    </ul></li>
+                </ul>
                 </div>
+            </section>
+            <section>
+                    <br><br><em><font color=#55aa22>Slide(s) showing potential API</font></em>
+            </section>
+            <section>
+                <h2>Block by action</h2>
+                <div id="list">
+                <ul>
+                    <li class="fragment">Issues:
+                    <ul>
+                        <li class="fragment">Could be more granular</li>
+                        <li class="fragment">Need to evaluate for each node in graph</li>
+                    </ul></li>
+                </ul>
+                </div>
+            </section>
+            <section>
+                <h2>Block by action</h2>
+                <div id="list" align="left">
+                <ul>
+                    <li class="fragment">Advantages:
+                    <ul>
+                        <li class="fragment">Only need to know self
+                        <ul>
+                            <li> e.g., block-commit only cares about itself
+                        </ul></li>
+                        <div class="fragment">
+                        <li id="straight"></li>
+                        <li id="straight"></li>
+                        <li>Provides more granularity than current
+                        <ul>
+                            <li class="fragment">Potentially support more concurrent block jobs</li>
+                        <ul></li>
+                       </div>
+                    </ul></li>
+                </ul>
+                </div>
+            </section>
+            <section>
+                <h3>More Enhancements</h3>
+                <div id="list">
+                    <ul>
+                        <li class="fragment">Allow modifiers to action blockers
+                        <ul>
+                            <li class="fragment">Applies more definition
+                            <ul><li class="fragment">e.g., GUEST_VISIBLE</li>
+                            </ul></li>
+                        </ul></li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h3>The Future is Hazy...</h3>
+                <div id="list">
+                    <ul>
+                        <li class="fragment">Define blockers in the QAPI JSON</li>
+                    </ul>
+                </div>
+            </section>
         </section>
 
 
@@ -258,6 +339,10 @@ bdrv_op_unblock(bs->backing_hd, BLOCK_OP_TYPE_COMMIT,
             <h1 class="alt">THE END</h1>
             <hr>
             <h4>Jeff Cody | <font color=#cb2026> Red Hat, Inc.</font></h4>
+
+            <small>
+                Presentation available at: <a href="http://qemu.rocks">http://qemu.rocks</a>
+            </small>
         </section>
 
     </div>
