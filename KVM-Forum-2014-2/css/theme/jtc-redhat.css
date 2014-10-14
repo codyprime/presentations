@@ -1,6 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
-@import url(https://fonts.googleapis.com/css?family=Roboto%20Slab:400,700,400italic,700italic);
-@import url(http://fonts.googleapis.com/css?family=Changa+One|Righteous|Open+Sans);
 @import url(../../../resources/fonts/overpass.css);
 /**
  * Red Hat theme for reveal.js.
@@ -148,9 +145,9 @@ html * {
   position: absolute;
   opacity: 0;
   transition: opacity 0.5s ease-out;
-  bottom: 3%;
-  left: 3%;
-  z-index: 1; }
+  top: 3%;
+  right: 3%;
+  z-index: 5; }
 
 #logo-white img {
   width: 5em; }
@@ -159,9 +156,9 @@ html * {
   position: absolute;
   opacity: 1;
   transition: opacity 0.5s ease-out;
-  bottom: 3%;
-  left: 3%;
-  z-index: 1; }
+  top: 3%;
+  right: 3%;
+  z-index: 5; }
 
 #logo-black img {
   width: 5em; }

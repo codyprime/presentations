@@ -25,9 +25,9 @@
 //	font-style: normal;
 //}
 //
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
-@import url(https://fonts.googleapis.com/css?family=Roboto%20Slab:400,700,400italic,700italic);
-@import url(http://fonts.googleapis.com/css?family=Changa+One|Righteous|Open+Sans);
+//@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+//@import url(https://fonts.googleapis.com/css?family=Roboto%20Slab:400,700,400italic,700italic);
+//@import url(http://fonts.googleapis.com/css?family=Changa+One|Righteous|Open+Sans);
 
 @import "../../../resources/fonts/overpass.css";
 
@@ -196,9 +196,9 @@ $mainFontSize: 48px;
   position: absolute;
   opacity: 0;
   transition: opacity 0.5s ease-out;
-  bottom: 3%;
-  left: 3%;
-  z-index: 1; }
+  top: 3%;
+  right: 3%;
+  z-index: 5; }
 
 #logo-white img {
   width: 5em; }
@@ -207,9 +207,9 @@ $mainFontSize: 48px;
   position: absolute;
   opacity: 1;
   transition: opacity 0.5s ease-out;
-  bottom: 3%;
-  left: 3%;
-  z-index: 1; }
+  top: 3%;
+  right: 3%;
+  z-index: 5; }
 
 #logo-black img {
   width: 5em; }
