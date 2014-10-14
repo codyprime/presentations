@@ -102,7 +102,7 @@ var link = document.createElement( 'link' );
             </div>
         </div>
             </section>
-            <section>
+            <section data-state="logo-none">
                 <h2 class="alt"> Development Flow </h2>
                 <div id="list">
                 <ul>
@@ -163,9 +163,9 @@ var link = document.createElement( 'link' );
                 <a href="../resources/images/qemu-submit-flow.png">
                     <img src="../resources/images/qemu-submit-flow.png" style="border:0; background: rgba(255,255,255,0); width: 100%"></a>
            </section>
-            <section>
-                <h2 class="alt">Creating Quality Patches</h2>
-                <div id="list">
+            <section data-state="logo-none">
+                <div align="left" id="list">
+                <h2 class="alt">Creating Patches</h2>
                 <ul>
                     <li class="fragment">Each individual patch is a logical changeset
                     <ul>
@@ -175,16 +175,23 @@ var link = document.createElement( 'link' );
                     <ul>
                         <li class="fragment"> Don't break <code>git-bisect</code></li>
                         <li class="fragment"> Your series may be partially applied</li>
+                        <li class="fragment"> <code>make check</code>
+                        <ul><li class="fragment"><code>make check-help</code></li>
+                        </ul></li>
+                        <div class="fragment">
+                        <li id="straight"></li>
+                        <li id="straight"></li>
                         <li class="fragment"> Tools such as <code>git-compile-check</code> may be useful
-                        <ul><li class="fragment"><a href="https://github.com/codyprime/git-scripts/blob/master/git-compile-check">git-compile-check on github</a>
-                        </ul></li></li>
+                        <ul><li class="fragment"><a href="https://github.com/codyprime/git-scripts/blob/master/git-compile-check">git-compile-check on github</a></li>
+                        </ul></li>
+                    </div>
                     </ul></li>
                 </ul>
                 </div>
             </section>
-            <section>
+            <section data-state="logo-none">
                 <div align="left" id="list">
-                    <h2 class="alt">Creating Quality Patches</h2>
+                    <h2 class="alt">Creating Patches</h2>
                     <ul>
                         <li class="fragment">Meaningful commit messages
                         <ul>
@@ -202,13 +209,14 @@ var link = document.createElement( 'link' );
                         </li></ul></li>
                         <li class="fragment">Each patch follows coding guidelines
                         <ul class="fragment">
+                            <li><code>HACKING</code></li>
                             <li><code>./scripts/checkpatch.pl</code></li>
                             <li><code>codespell</code></li>
                         </ul></li>
                     </ul>
                 </div>
             </section>
-            <section>
+            <section data-state="logo-none">
                 <pre class="alt" style="background: rgba(0,0,0,0.8); width: 100%; border: 10px solid #33bb33;">
 commit 9aebf3b89281a173d2dfeee379b800be5e3f363e 
 Author: Kevin Wolf &lt;kwolf@redhat.com&gt; 
@@ -242,7 +250,7 @@ Date:   Thu Sep 25 09:54:02 2014 +0200
     
     Implement open_fragile_bits() for block layer.
 
-    Signed-off-by: Some Userf &lt;user@qemu.org&gt;
+    Signed-off-by: Some User &lt;user@qemu.org&gt;
 
             </section>
             <section>
@@ -284,9 +292,9 @@ git format-patch --subject-prefix="PATCH" -s \
                  --cover my_branch..</code></pre>
                 </div>
             </section>
-            <section>
+            <section data-state="logo-none">
                 <div align="left" id="list">
-                <h2 class="alt">Sending out the patches</h2>
+                <h2 class="alt">Sending patches</h2>
                 <ul>
                     <li class="fragment">Send patches inline
                     <ul><li> (not as attachments)</li>
@@ -310,7 +318,7 @@ git send-email --to=qemu-devel@nongnu.org \
                --suppress-cc=all *.patch</code></pre>
                 </div>
             </section>
-            <section>
+            <section data-state="logo-none">
                 <h2 class="alt">Caring for your patches</h2>
                 <div id="list">
                 <ul><li class="fragment">Don't "Fire and forget"
@@ -348,7 +356,9 @@ git send-email --to=qemu-devel@nongnu.org \
                     <ul><li class="fragment">But no need for excessive bike-shedding</li>
                 </ul></li>
                 <li class="fragment">If satisfied, indicate it
-                <ul><li>Reply-all with "Reviewed-by: Your Name <youremail>"</li>
+                <ul><li>
+                    Reply-all with "Reviewed-by: Your Name &lt;your@email.address&gt;"
+                    </li>
                 </ul></li>
                 </ul>
                 </div>
@@ -360,7 +370,7 @@ git send-email --to=qemu-devel@nongnu.org \
                 <h2 class="alt">File bug reports</h2>
                 <img src="../resources/images/bug.gif" height=500px class="fragment" border=0 id="print-never">
             </section>
-            <section>
+            <section data-state="logo-none">
                 <h2 class="alt">File bug reports</h2>
                 <div id="list">
                 <ul>
@@ -398,7 +408,7 @@ git send-email --to=qemu-devel@nongnu.org \
                 <h2 class="alt">Documentation</h2>
                 <img src="../resources/images/house-document.gif" height=500px class="fragment" id="print-never">
             </section>
-            <section>
+            <section data-state="logo-none">
                 <h2 class="alt">Documentation</h2>
                 <div id="list">
                 <ul>
