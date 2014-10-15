@@ -51,7 +51,7 @@ var link = document.createElement( 'link' );
                 <small>
                     Jeff Cody | <a href="mailto:jcody@redhat.com"> jcody@redhat.com </a>
                     <br>
-                    Presentation available at: <a href="http://qemu.rocks">http://qemu.rocks</a>
+                    Presentation available at: <a href="http://qemu.rocks/kvm2014-2">http://qemu.rocks/kvm2014-2</a>
                 </small>
             </center>
         </div>
@@ -95,12 +95,31 @@ var link = document.createElement( 'link' );
                                 etc...</li>
                             </ul></li>
                             <li class="fragment">
-                            Runs in a coroutine, while QEMU runs</li>
+                            Runs in a coroutine, while guest runs
+                            <ul><li class="fragment">Asynchrounous</li>
+                            </ul</li>
                             <li class="fragment">
-                            Modifies block image in some way</li>
+                            Modifies block image(s) in some way</li>
                         </ul>
-                    <br><br><em><font color=#55aa22>TODO: More slides expanding on this</font></em>
                     </div>
+                </div>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2 class="alt">Why are Blockers Needed?</h2>
+                <div id="list">
+                    <ul>
+                        <li class="fragment">bs-&gt;job already prohibits multiple jobs</li>
+                        <li class="fragment">Does not just block other block jobs
+                        <ul><li class="fragment">Blocks some synchronouse commands
+                            <ul><li class="fragment">eject</li>
+                                <li class="fragment">hmp commit</li>
+                                <li class="fragment">drive-del</li>
+                                <li class="fragment">etc..</li>
+                            </ul></li>
+                        </ul></li>
+                    </ul>
                 </div>
             </section>
         </section>
@@ -122,6 +141,7 @@ var link = document.createElement( 'link' );
                             </ul></li>
                             <div class="fragment">
                                 <li id="straight"></li>
+                                <li id="straight"></li>
                                 <li>
                                 Only single BDS was checked, at the top layer.
                                 </li>
@@ -130,7 +150,19 @@ var link = document.createElement( 'link' );
                     </ul>
                 </div>
             </section>
-            <section> 
+            <section>
+                <h2 class="alt">What Changed?</h2>
+                <div id="list">
+                    <ul>
+                        <li class="fragment">Direct BDS access
+                        <ul><li class="fragment">May not reference active (top) BDS</li>
+                            <li class="fragment">Enabled by node-names</li>
+                        </ul></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section data-state="logo-none"> 
                 <h2 class="alt">Job Safety, circa v2.1.0</h2>
                 <div id="list">
                     <ul>
@@ -157,7 +189,7 @@ var link = document.createElement( 'link' );
                         <li class="fragment">Improvement over in_use flag
                         <ul>
                             <li class="fragment">Provides some granularity</li>
-                            <li class="fragment">Blockers have individual DBS in mind</li>
+                            <li class="fragment">Blockers have individual BDS in mind</li>
                         </ul></li>
                     </li></ul>
                 </div>
@@ -217,7 +249,7 @@ bdrv_op_unblock(bs->backing_hd, BLOCK_OP_TYPE_COMMIT,
                                     <li  id="straight"></li>
                                     <li  id="straight"></li>
                                 </div>
-                                <li class="fragment"> Once used per command, what blocks what?
+                                <li class="fragment"> How to determine what blockers to check?</li> 
                                 <ul>
                                     <li class="fragment"> Forces QAPI handlers to be aware of how every other handler implemented
                                     <ul>
@@ -227,33 +259,28 @@ bdrv_op_unblock(bs->backing_hd, BLOCK_OP_TYPE_COMMIT,
 
                             </ul></li>
                         </ul>
-                    <br><br><em><font color=#55aa22>TODO: More slides expanding on this</font></em>
                     </div>
             </section>
         </section>
 
         <section>
             <section>
-                <h2> Current On-list Work</h2>
+                <h3> Current On-list Work</h3>
                 <div id="list" align="left">
                     Patches from Benoît Canet
                     <ul>
                         <li class="fragment">Adds recursion to blockers
                         <ul><li class="fragment">
                             We can use blockers by command</li>
-                            <div class="fragment">
-                                <li>
-                                Should allow BLOCK_OP_TYPE_COMMIT<br>
-                                to be used</li>
-                                <li id="straight"></li>
-                                <li id="straight"></li>
-                            </div>
-                            <li class="fragment">
-                            Protects chain</li>
+                            <li class="fragment">BLOCK_OP_TYPE_COMMIT, yay!</li>
+                            <li class="fragment">Protects chain
+                            <ul><li class="fragment">Can remove bs-&gt;job</li>
+                            </ul></li>
                         </ul></li>
+                    </ul>
+                        <ul>
                         <li class="fragment">Still uses blockers typed by QAPI command</li>
                     </ul>
-                    <br><br><em><font color=#55aa22>TODO: More slides expanding on this</font></em>
                 </div>
             </section>
         </section>
@@ -263,7 +290,7 @@ bdrv_op_unblock(bs->backing_hd, BLOCK_OP_TYPE_COMMIT,
                 <h2> QEMU 2.3+ </h2>
             </section>
             <section>
-                <h3>Obtain blocker by action</h3>
+                <h3>Set blocker by action</h3>
                 <div id="list" align="left">
                 <ul>
                     <li class="fragment">On each BDS:
@@ -275,7 +302,7 @@ bdrv_op_unblock(bs->backing_hd, BLOCK_OP_TYPE_COMMIT,
                 </ul>
                 <ul>
                     <li class="fragment">Blockers obtained atomically
-                    <ul><li class="fragment">Obtain blocker on multiple BDSs
+                    <ul><li class="fragment">Set blocker on multiple BDSs
                         <ul><li class="fragment">First, check if we can obtain a block
                             <ul><li class="fragment">All-or-none</li>
                             </ul></li>
@@ -284,8 +311,79 @@ bdrv_op_unblock(bs->backing_hd, BLOCK_OP_TYPE_COMMIT,
                 </ul>
                 </div>
             </section>
-            <section>
-                    <br><br><em><font color=#55aa22>Slide(s) showing potential API</font></em>
+            <section data-transtion="none" data-background-transition="none">
+            </section>
+            <section data-transtion="none" data-background-transition="none" data-state="logo-none">
+
+                <h3>Examining block-commit</h3>
+                <br>
+                <div>
+                    <div style="width:35%; float: left">
+                        <img src="../resources/images/block-chain.png" style="border-style:none; background: rgba(0,0,0,0)" align="left">
+                    </div>
+                    <div style="width:65%; float: right">
+                    </div>
+                </div>
+            </section>
+            <section data-transition="none" data-background-transition="none" data-state="logo-none">
+                <h3>Examining block-commit</h3>
+                <br>
+                <div>
+                    <div style="width:35%; float: left">
+                        <img src="../resources/images/block-commit-1.png" style="border-style:none; background: rgba(0,0,0,0)" align="left">
+                    </div>
+                    <div style="width:65%; float: right">
+                       snap-A into snap-C
+                    </div>
+                </div>
+            </section>
+            <section data-transition="none" data-background-transition="none" data-state="logo-none">
+                <h3>Examining block-commit</h3>
+                <br>
+                <div>
+                    <div style="width:35%; float: left">
+                        <img src="../resources/images/block-commit-2.png" style="border-style:none; background: rgba(0,0,0,0)" align="left">
+                    </div>
+                    <div style="width:65%; float: right">
+                        block Reads + Writes
+                    </div>
+                </div>
+            </section>
+            <section data-transition="none" data-background-transition="none" data-state="logo-none">
+                <h3>Examining block-commit</h3>
+                <br>
+                <div>
+                    <div style="width:35%; float: left">
+                        <img src="../resources/images/block-commit-3.png" style="border-style:none; background: rgba(0,0,0,0)" align="left">
+                    </div>
+                    <div style="width:65%; float: right">
+                        block Write
+                    </div>
+                </div>
+            </section>
+            <section data-transition="none" data-background-transition="none" data-state="logo-none">
+                <h3>Examining block-commit</h3>
+                <br>
+                <div>
+                    <div style="width:35%; float: left">
+                        <img src="../resources/images/block-commit-4.png" style="border-style:none; background: rgba(0,0,0,0)" align="left">
+                    </div>
+                    <div style="width:65%; float: right">
+                        block Attribute / Metadata
+                    </div>
+                </div>
+            </section>
+            <section data-transition="none" data-background-transition="none" data-state="logo-none">
+                <h3>Examining block-commit</h3>
+                <br>
+                <div>
+                    <div style="width:35%; float: left">
+                        <img src="../resources/images/block-commit-5.png" style="border-style:none; background: rgba(0,0,0,0)" align="left">
+                    </div>
+                    <div style="width:65%; float: right">
+                        block Chain Manipulation
+                    </div>
+                </div>
             </section>
             <section>
                 <h2>Block by action</h2>
@@ -330,6 +428,11 @@ bdrv_op_unblock(bs->backing_hd, BLOCK_OP_TYPE_COMMIT,
                             <li class="fragment">Applies more definition
                             <ul><li class="fragment">e.g., GUEST_VISIBLE</li>
                             </ul></li>
+                            <div class="fragment">
+                            <li id="straight">
+                            <li id="straight">
+                            <li>Can be extended</li>
+                            </div>
                         </ul></li>
                     </ul>
                 </div>
@@ -338,7 +441,13 @@ bdrv_op_unblock(bs->backing_hd, BLOCK_OP_TYPE_COMMIT,
                 <h3>The Future is Hazy...</h3>
                 <div id="list">
                     <ul>
-                        <li class="fragment">Define blockers in the QAPI JSON</li>
+                        <li class="fragment">Define blockers in the QAPI JSON
+                        <ul><li class="fragment">Relevant blockers set automatically
+                            <ul>
+                                <li class="fragment">Don't need to write redundant code</li>
+                                <li class="fragment">Fewer mechanical mistakes</li>
+                            </ul></li>
+                        </ul></li>
                     </ul>
                 </div>
             </section>
@@ -347,7 +456,7 @@ bdrv_op_unblock(bs->backing_hd, BLOCK_OP_TYPE_COMMIT,
 
         <section>
             <section data-state="no-dark-overlay">
-                <h2 class="alt">Questions?</h2>
+                <h3 class="alt">Questions / Discussion</h3>
                 <img src="../resources/images/simpsons-no-loop.gif" height=500px class="fragment" id="print-never">
             </section>
         </section>
@@ -359,7 +468,7 @@ bdrv_op_unblock(bs->backing_hd, BLOCK_OP_TYPE_COMMIT,
             <h4>Jeff Cody | <font color=#cb2026> Red Hat, Inc.</font></h4>
 
             <small>
-                Presentation available at: <a href="http://qemu.rocks">http://qemu.rocks</a>
+                Presentation available at: <a href="http://qemu.rocks/kvm2014-2">http://qemu.rocks/kvm2014-2</a>
             </small>
         </section>
 
@@ -392,7 +501,7 @@ history: true,
 center: true,
 
 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
 
 parallaxBackgroundImage: parallaxImage,
 parallaxBackgroundSize: '4400px 2475px',
