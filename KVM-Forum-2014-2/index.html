@@ -112,7 +112,7 @@ var link = document.createElement( 'link' );
                     <ul>
                         <li class="fragment">bs-&gt;job already prohibits multiple jobs</li>
                         <li class="fragment">Does not just block other block jobs
-                        <ul><li class="fragment">Blocks some synchronouse commands
+                        <ul><li class="fragment">Blocks some synchronous commands
                             <ul><li class="fragment">eject</li>
                                 <li class="fragment">hmp commit</li>
                                 <li class="fragment">drive-del</li>
@@ -137,7 +137,7 @@ var link = document.createElement( 'link' );
                             <li class="fragment">v0.15.0 up to v2.1.0</li>
                             <li class="fragment">Boolean
                             <ul>
-                                <li class="fragment">Blocks all block jobs on a BDS</li>
+                                <li class="fragment">Blocks whole BDS chain</li>
                             </ul></li>
                             <div class="fragment">
                                 <li id="straight"></li>
@@ -208,7 +208,7 @@ var link = document.createElement( 'link' );
                                 <li class="fragment">Special exception in bdrv_set_backing_hd()
                                 <ul>
                                     <li class="fragment">
-                                    Means block-commit can <em>only</em> check active BDS
+                                    Means everything can <em>only</em> check active BDS for block-commit
                                     </li>
                             </ul></li>
                         </ul>
@@ -303,7 +303,7 @@ bdrv_op_unblock(bs->backing_hd, BLOCK_OP_TYPE_COMMIT,
                 <ul>
                     <li class="fragment">Blockers obtained atomically
                     <ul><li class="fragment">Set blocker on multiple BDSs
-                        <ul><li class="fragment">First, check if we can obtain a block
+                        <ul><li class="fragment">Check if blockers currently set
                             <ul><li class="fragment">All-or-none</li>
                             </ul></li>
                         </ul></li>
