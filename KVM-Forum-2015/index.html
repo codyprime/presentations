@@ -150,7 +150,7 @@ var link = document.createElement( 'link' );
                                 <li class="fragment">Incremental sync mode added
                                 <ul>
                                     <li class="fragment">(John Snow), v2.4.0+</li>
-                                    <li class="fragment">Incremental backups (see John's presentation!)</li>
+                                    <li class="fragment">Incremental backups<br>(see John's presentation!)</li>
                                 </ul>
                                 </li>
                             </ul>
@@ -430,50 +430,114 @@ var link = document.createElement( 'link' );
             <section>
                 <h2 class="alt">Safe(r) Commit</h2>
                 <img src="../resources/images/kvm2015-commit1.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+                <div height="50%">
+                    Sectors in "active" differ from those in "base"
+                </div>
             </section>
             <section>
                 <h2 class="alt">Safe(r) Commit</h2>
                 <img src="../resources/images/kvm2015-commit2.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+                <div height="50%">
+                    Normal commit: push sectors into "base"
+                </div>
             </section>
             <section>
                 <h2 class="alt">Safe(r) Commit</h2>
                 <img src="../resources/images/kvm2015-commit3.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+                <div height="50%">
+                    Images "snap-a" and "snap-b" now invalid
+                </div>
             </section>
             <section>
                 <h2 class="alt">Safe(r) Commit</h2>
                 <img src="../resources/images/kvm2015-commit1.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+                <div height="50%">
+                    Let's try to be safer
+                </div>
             </section>
             <section>
                 <h2 class="alt">Safe(r) Commit</h2>
                 <img src="../resources/images/kvm2015-commit4.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+                <div height="50%">
+                    First, stream affected sectors to overlay image
+                </div>
             </section>
             <section>
                 <h2 class="alt">Safe(r) Commit</h2>
                 <img src="../resources/images/kvm2015-commit5.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+                <div height="50%">
+                    Now commit sectors from "active"
+                </div>
             </section>
             <section>
                 <h2 class="alt">Safe(r) Commit</h2>
                 <img src="../resources/images/kvm2015-commit6.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+                <div height="50%">
+                    All backing files in the chain are now still valid </div>
             </section>
-
-
-
-
-
         </section>
 
         <section data-transtion="none" data-background-transition="none" data-state="logo-none"> 
             <section data-transtion="none" data-background-transition="none" data-state="logo-none"> 
-                <h1 class="alt"> Block Job Tutorial </h1>
+                <h2 class="alt"> Structure of a Block Job </h2>
             </section>
 
-            <section data-transtion="none" data-background-transition="none" data-state="logo-none"> 
+            <section>
                 <h2 class="alt"> Key Components </h2>
+                <div id="list">
+                    <ul>
+                        <li class="fragment">
+                            QMP command definition
+                            <ul>
+                                <li class="fragment">JSON file (qapi/*.json)</li>
+                                <li class="fragment">qmp_commands.hx</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">
+                            Command handler
+                            <ul>
+                                <li class="fragment">blockdev.c</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">
+                            Block Job coroutine
+                            <ul>
+                                <li class="fragment">e.g. block/stream.c</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">
+                            Schedule job completion / cleanup
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <h2 class="alt"> A sample Block Job: </h2>
+            <div id="list">
+                <ul>
+                    <li class="fragment">block-null
+                    <ul>
+                        <li class="fragment">Simple block job</li>
+                        <li class="fragment">Reads all sectors in BDS</li>
+                    </ul></li>
+                </ul>
+
+                <br><br>
+                <div class="fragment">
+                    Code available at:
+                    <a href="http://qemu.rocks/kvm2015/git">
+                        http://qemu.rocks/kvm2015/git
+                    </a>
+                </div>
+            </div>
+        </section>
+
+            <section data-transtion="none" data-background-transition="none" data-state="logo-none"> 
+                <h2 class="alt"> QMP Command Definition </h2>
                 <br>
                 <div>
-                    <div style="width:35%; height:100%; float: left">
-                        <img src="../resources/images/KVMForum2015-1.png" style="border-style:none; background: rgba(0,0,0,0)" align="left">
-                    </div>
                     <div style="width:65%; float: right" class="fragment">
                     <pre class="alt" style="background: rgba(0,0,0,0.8); width: 100%; border: 10px solid #33bb33;">
                     <code class="alt" id="expand"> 
@@ -488,18 +552,9 @@ var link = document.createElement( 'link' );
                 </div>
             </section>
 
-            <section data-transtion="none" data-background-transition="none" data-state="logo-none"> 
-                <h2 class="alt"> Key Components </h2>
-                <br>
-                <div>
-                    <div style="width:35%; height:100%; float: left">
-                        <img src="../resources/images/KVMForum2015-2.png" style="border-style:none; background: rgba(0,0,0,0)" align="left">
-                    </div>
-                    <div style="width:65%; float: right" class="fragment">
-                    </div>
-                </div>
+            <section>
+                <h2 class="alt">QMP Handler</h2>
             </section>
-
             <section data-transtion="none" data-background-transition="none" data-state="logo-none"> 
                     <pre class="alt" style="background: rgba(0,0,0,0.8); width: 100%; border: 10px solid #33bb33;">
                     <code class="alt" id="expand"> 
@@ -540,73 +595,41 @@ out:
                     </pre>
             </section>
 
-            <section data-transtion="none" data-background-transition="none" data-state="logo-none"> 
-                <h2 class="alt"> Key Components </h2>
-                <br>
-                <div>
-                    <div style="width:35%; height:100%; float: left">
-                        <img src="../resources/images/KVMForum2015-3.png" style="border-style:none; background: rgba(0,0,0,0)" align="left">
-                    </div>
-                </div>
-            </section>
-
-           <section data-transtion="none" data-background-transition="none" data-state="logo-none"> 
-                    <pre class="alt" style="background: rgba(0,0,0,0.8); width: 100%; border: 10px solid #33bb33;">
-                    <code class="alt" id="expand"> 
-
-} </code> </pre>
-            </section>
-
-            <section data-transtion="none" data-background-transition="none" data-state="logo-none"> 
-                <h2 class="alt"> Key Components </h2>
-                <br>
-                <div>
-                    <div style="width:35%; height:100%; float: left">
-                        <img src="../resources/images/KVMForum2015-3.png" style="border-style:none; background: rgba(0,0,0,0)" align="left">
-                    </div>
-                </div>
-            </section>
-
-
-            <section>
-                <h2 class="alt"> Key Components </h2>
-                <div id="list">
+    <section>
+        <h2 class="alt">Block Job Coroutine</h2>
+        <div id="list">
+            <ul>
+                <li class="fragment">Coroutine loop
+                <ul>
+                    <div class="fragment">
+                    <li>Cooperative - must sleep
                     <ul>
-                        <li class="fragment">
-                            QMP command definition
-                            <ul>
-                                <li class="fragment">JSON file (qapi/*.json)</li>
-                                <li class="fragment">qmp_commands.hx</li>
-                            </ul>
-                        </li>
-                        <li class="fragment">
-                            Command handler
-                            <ul>
-                                <li class="fragment">blockdev.c</li>
-                            </ul>
-                        </li>
-                        <li class="fragment">
-                            Block Job coroutine
-                            <ul>
-                                <li class="fragment">e.g. block/stream.c</li>
-                            </ul>
-                        </li>
-                        <li class="fragment">
-                            Schedule job completion / cleanup
-                        </li>
+                        <li><code>block_job_sleep_ns()</code></li>
                     </ul>
+                    <li id="straight"></li>
+                    <li id="straight"></li>
+                    </li>
                 </div>
-            </section>
-            <section>
-                <h2 class="alt"> QMP command definition  </h2>
-            </section>
-        </section>
-
+                    <li class="fragment">Perform I/O
+                    <ul>
+                        <li class="fragment">e.g., loop &amp; read sectors</li>
+                    </ul>
+                    </li>
+                    </li>
+                </ul>
+                </li>
+                <br><br>
+        <div class="fragment">
+            <a href="http://qemu.rocks/kvm2015/job-null.c">
+                http://qemu.rocks/kvm2015/job-null.c
+            </a>
+        </div>
+    </section>
 
     <section>
         <section data-state="no-dark-overlay">
             <h2 class="alt">Questions?</h2>
-            <img src="../resources/images/simpsons-no-loop.gif" height=500px class="fragment" id="print-never">
+            <img src="../resources/images/simpsons-no-loop.gif" height=500px id="print-never">
         </section>
     </section>
 
