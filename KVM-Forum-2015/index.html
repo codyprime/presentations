@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+<title>Block Jobs: Current Status, Upcoming Challenges</title>
+
+<meta name="author" content="Jeff Cody">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="css/reveal.min.css">
+<link rel="stylesheet" href="css/theme/jtc-redhat.css" id="theme">
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<script>
+var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+<link rel="import" href="http://localhost:3000/init1.html">
+</head>
+
+<body>
+
+<div class="reveal">
+    <div id="print-never">
+    <div id="dark-overlay">
+    </div>
+    </div>
+    <a id="logo-black"><img src="../resources/images/Red_Hat_RGB_reverse.png" alt=""/></a>
+    <a id="logo-white"><img src="../resources/images/Red_Hat_RGB.png" alt=""/></a>
+    <div id="header-white">
+        <div id="print-never">
+        <center>
+            <h2>Block Jobs:</h2>
+            <h4>Current Status, Upcoming Challenges</h4>
+            <small>
+                Jeff Cody | <a href="mailto:jcody@redhat.com"> jcody@redhat.com </a>
+                <br>
+                Seattle, WA<br>
+                August 21, 2015<br>
+                Presentation available at: <a href="http://qemu.rocks/jtc-kvm2015">http://qemu.rocks/jtc-kvm2015</a>
+            </small>
+        </center>
+       </div>
+    </div>
+
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <div id="print-only">
+        <section>
+                     <center>
+                         <h2>Block Jobs: </h2>
+                         <h4>Current Status, Upcoming Challenges</h4>
+                         <small>
+                             Jeff Cody | <a href="mailto:jcody@redhat.com"> jcody@redhat.com </a>
+                             <br>
+                             Seattle, WA<br>
+                             August 21, 2015<br>
+                             Presentation available at: <a href="http://qemu.rocks/jtc-kvm2015">http://qemu.rocks/jtc-kvm2015</a>
+                         </small>
+                     </center>
+          </section>
+      </div>
+         <section data-state="header-visible no-dark-overlay"
+                 data-background-video="../resources/videos/coffee-grayscale.mp4"
+                 data-background-video-loop="true"
+                 data-background="#111111" id="print-never">
+        </section>
+        <section>
+            <section>
+                <h3 class="alt">What are Block Jobs?</h4>
+                <div id="list">
+                    <ul>
+                        <li class="fragment">Initiated by QMP/HMP Command
+                        <ul>
+                            <div class="fragment">
+                                <li> e.g.:<br> { "execute": "block-commit", <br>
+                                &nbsp &nbsp "arguments": { "device": "virtio0" } }
+                                </li>
+                                <li id="straight"> </li>
+                                <li id="straight"> </li>
+                                <li id="straight"> </li>
+                            </div>
+                            <li class="fragment">Executed via coroutine
+                            <ul>
+                                <li class="fragment">Asynchronous</li>
+                            </ul>
+                            </li>
+                            <div class="fragment">
+                                <li id="straight"> </li>
+                                <li id="straight"> </li>
+                                <li>Perform I/O on images(s)</li>
+                            </div>
+
+                        </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h1 class="alt">Current Status</h1>
+                <h3 class="alt">(v2.2.0..)</h3>
+                    <div class="fragment" id="list" align="left">
+                        <ul>
+                            <li class="fragment">Four Block Jobs
+                            <ul>
+                                <li class="fragment">Backup</li>
+                                <li class="fragment">Stream</li>
+                                <li class="fragment">Commit</li>
+                                <li class="fragment">Mirror</li>
+                            </ul>
+                            </li>
+                            <li class="fragment">Block Job infrastructure</li> </ul>
+                    </div>
+           </section>
+           <section>
+                <div class="alt">
+                    <h2 class="alt">Backup</h2>
+                    <div align="left" id="list">
+                        <ul>
+                            <li>Changes in qemu.git/master
+                            <ul>
+                                <div class="fragment">
+                                <li>blockdev-backup QMP command added
+                                <ul>
+                                    <li>(Fam Zheng), v2.3.0+ </li>
+                                </ul>
+                                <li id="straight"></li>
+                                </li>
+                            </div>
+                                <li class="fragment">Incremental sync mode added
+                                <ul>
+                                    <li class="fragment">(John Snow), v2.4.0+</li>
+                                    <li class="fragment">Incremental backups (see John's presentation!)</li>
+                                </ul>
+                                </li>
+                            </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="fragment">Patches on list
+                                <ul>
+                                    <li class="fragment">COLO support
+                                    <ul>
+                                        <li class="fragment">(Wen Congyang)</li>
+                                    </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+             <section>
+                <div class="alt">
+                    <h2 class="alt">Stream</h2>
+                    <div align="left" id="list">
+                        <ul>
+                            <li>Changes in qemu.git/master
+                            <ul>
+                                <li class="fragment">Minor bug fixes / cleanup</li>
+                            </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="fragment">Patches on list
+                                <ul>
+                                    <li class="fragment">Intermediate streaming
+                                    <ul>
+                                        <li>(Alberto Garcia)</lI>
+                                    </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div height="139px" class="fragment">
+                        <img src="../resources/images/kvm2015-stream1.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+                    </div>
+                </div>
+            </section>
+             <section>
+                <div class="alt">
+                    <h2 class="alt">Stream</h2>
+                    <div align="left" id="list">
+                        <ul>
+                            <li>Changes in qemu.git/master
+                            <ul>
+                                <li>Minor bug fixes / cleanup</li>
+                            </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>Patches on list
+                                <ul>
+                                    <li>Intermediate streaming
+                                    <ul>
+                                        <li>(Alberto Garcia)</lI>
+                                    </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div height="139px">
+                        <img src="../resources/images/kvm2015-stream2.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+                    </div>
+                </div>
+            </section>
+             <section>
+                <div class="alt">
+                    <h2 class="alt">Stream</h2>
+                    <div align="left" id="list">
+                        <ul>
+                            <li>Changes in qemu.git/master
+                            <ul>
+                                <li>Minor bug fixes / cleanup</li>
+                            </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>Patches on list
+                                <ul>
+                                    <li>Intermediate streaming
+                                    <ul>
+                                        <li>(Alberto Garcia)</lI>
+                                    </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div height="139px">
+                        <img src="../resources/images/kvm2015-stream3.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+                    </div>
+                </div>
+            </section>
+             <section>
+                <div class="alt">
+                    <h2 class="alt">Stream</h2>
+                    <div align="left" id="list">
+                        <ul>
+                            <li>Changes in qemu.git/master
+                            <ul>
+                                <li>Minor bug fixes / cleanup</li>
+                            </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>Patches on list
+                                <ul>
+                                    <li>Intermediate streaming
+                                    <ul>
+                                        <li>(Alberto Garcia)</lI>
+                                    </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div height="139px">
+                        <img src="../resources/images/kvm2015-stream1.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+                    </div>
+                </div>
+            </section>
+             <section>
+                <div class="alt">
+                    <h2 class="alt">Stream</h2>
+                    <div align="left" id="list">
+                        <ul>
+                            <li>Changes in qemu.git/master
+                            <ul>
+                                <li>Minor bug fixes / cleanup</li>
+                            </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>Patches on list
+                                <ul>
+                                    <li>Intermediate streaming
+                                    <ul>
+                                        <li>(Alberto Garcia)</lI>
+                                    </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div height="139px">
+                        <img src="../resources/images/kvm2015-stream4.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+                    </div>
+                </div>
+            </section>
+             <section>
+                <div class="alt">
+                    <h2 class="alt">Stream</h2>
+                    <div align="left" id="list">
+                        <ul>
+                            <li>Changes in qemu.git/master
+                            <ul>
+                                <li>Minor bug fixes / cleanup</li>
+                            </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>Patches on list
+                                <ul>
+                                    <li>Intermediate streaming
+                                    <ul>
+                                        <li>(Alberto Garcia)</lI>
+                                    </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div height="139px">
+                        <img src="../resources/images/kvm2015-stream5.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="alt">
+                    <h2 class="alt"> Commit </h2>
+                    <div id="list">
+                        <ul>
+                            <li>Changes in qemu.git/master
+                            <ul>
+                                <li class="fragment">Minor bug fixes / cleanup</li>
+                            </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+           <section>
+                <div class="alt">
+                    <h2 class="alt">Mirror</h2>
+                    <div id="list">
+                        <ul>
+                            <li>Changes in qemu.git/master
+                            <ul>
+                               <li class="fragment">Bitmap spoiling fix
+                                <ul>
+                                    <li>(Vladimir Sementsov-Ogievskiy), 2.2.0+</li>
+                                </ul>
+                                </li>
+                                <div class="fragment">
+                                    <li id="straight"</li>
+                                    <li id="straight"</li>
+                                    <li>Bitmap scanning speedup
+                                    <ul>
+                                        <li>(Fam Zheng), 2.4.0+</li>
+                                    </ul>
+                                    </li>
+                                </div>
+                                <div class="fragment">
+                                    <li id="straight"</li>
+                                    <li id="straight"</li>
+                                    <li>Coroutine re-entrancy fix
+                                    <ul>
+                                        <li>(Kevin Wolf), 2.5.0+</li>
+                                    </ul>
+                                    </li>
+                                </div>
+                                <div class="fragment">
+                                    <li id="straight"</li>
+                                    <li id="straight"</li>
+                                    <li>Minor bug fixes / cleanup</li>
+                                </div>
+                              </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="alt">Block Job Infrastructure</h2>
+                <div id="list">
+                    <ul>
+                        <li class="fragment">Changes in qemu.git/master
+                        <ul>
+                            <li class="fragment">Nested Pause
+                            <ul>
+                                <li>(Fam Zheng)</li>
+                                <li>v2.4.0+</li>
+                            </ul>
+                            </li>
+                        </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+ 
+        </section>
+
+        <section>
+            <section data-state="no-dark-overlay">
+                <h2 class="alt"> Future Challenges / Improvements </h2>
+                <h3 class="alt">(v2.5.0+)</h3>
+                <div id="list">
+                    <ul>
+                        <li class="fragment">Op Blockers
+                        <ul>
+                            <li class="fragment"> Finer granularity - more parallelism</li>
+                            <li class="fragment"> Safer blocking</li>
+                        </ul>
+                        <li class="fragment"> Safe(r) commit</li>
+            </section>
+            <section>
+                <h2 class="alt">Safe(r) Commit</h2>
+                <img src="../resources/images/kvm2015-commit1.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+            </section>
+            <section>
+                <h2 class="alt">Safe(r) Commit</h2>
+                <img src="../resources/images/kvm2015-commit2.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+            </section>
+            <section>
+                <h2 class="alt">Safe(r) Commit</h2>
+                <img src="../resources/images/kvm2015-commit3.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+            </section>
+            <section>
+                <h2 class="alt">Safe(r) Commit</h2>
+                <img src="../resources/images/kvm2015-commit1.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+            </section>
+            <section>
+                <h2 class="alt">Safe(r) Commit</h2>
+                <img src="../resources/images/kvm2015-commit4.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+            </section>
+            <section>
+                <h2 class="alt">Safe(r) Commit</h2>
+                <img src="../resources/images/kvm2015-commit5.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+            </section>
+            <section>
+                <h2 class="alt">Safe(r) Commit</h2>
+                <img src="../resources/images/kvm2015-commit6.png" style="border-style:none; background: rgba(0,0,0,0)" align="center">
+            </section>
+
+
+
+
+
+        </section>
+
+        <section data-transtion="none" data-background-transition="none" data-state="logo-none"> 
+            <section data-transtion="none" data-background-transition="none" data-state="logo-none"> 
+                <h1 class="alt"> Block Job Tutorial </h1>
+            </section>
+
+            <section data-transtion="none" data-background-transition="none" data-state="logo-none"> 
+                <h2 class="alt"> Key Components </h2>
+                <br>
+                <div>
+                    <div style="width:35%; height:100%; float: left">
+                        <img src="../resources/images/KVMForum2015-1.png" style="border-style:none; background: rgba(0,0,0,0)" align="left">
+                    </div>
+                    <div style="width:65%; float: right" class="fragment">
+                    <pre class="alt" style="background: rgba(0,0,0,0.8); width: 100%; border: 10px solid #33bb33;">
+                    <code class="alt" id="expand"> 
+{ 'enum': 'BlockJobType',
+  'data': ['commit', 'stream', 'mirror', 'backup', 'null'] }
+
+{ 'command': 'block-null',
+  'data': { 'device': 'str', '*speed': 'int' } }
+                    </code>
+                    </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section data-transtion="none" data-background-transition="none" data-state="logo-none"> 
+                <h2 class="alt"> Key Components </h2>
+                <br>
+                <div>
+                    <div style="width:35%; height:100%; float: left">
+                        <img src="../resources/images/KVMForum2015-2.png" style="border-style:none; background: rgba(0,0,0,0)" align="left">
+                    </div>
+                    <div style="width:65%; float: right" class="fragment">
+                    </div>
+                </div>
+            </section>
+
+            <section data-transtion="none" data-background-transition="none" data-state="logo-none"> 
+                    <pre class="alt" style="background: rgba(0,0,0,0.8); width: 100%; border: 10px solid #33bb33;">
+                    <code class="alt" id="expand"> 
+void qmp_block_null(const char *device,
+                      bool has_speed, int64_t speed,
+                      Error **errp)
+{
+    BlockBackend *blk;
+    BlockDriverState *bs;
+    AioContext *aio_context;
+    Error *local_err = NULL;
+
+    if (!has_speed) {
+        speed = 0;
+    }
+
+    blk = blk_by_name(device);
+    if (!blk) {
+        error_set(errp, ERROR_CLASS_DEVICE_NOT_FOUND,
+                  "device '%s' not found", device);
+        return;
+    }
+    bs = blk_bs(blk);
+
+    aio_context = bdrv_get_aio_context(bs);
+    aio_context_acquire(aio_context);
+
+    if (local_err != NULL) {
+        error_propagate(errp, local_err);
+        goto out;
+    }
+
+    null_start(bs, speed, block_job_cb, bs, &local_err);
+
+out:
+    aio_context_release(aio_context);
+} </code>
+                    </pre>
+            </section>
+
+            <section data-transtion="none" data-background-transition="none" data-state="logo-none"> 
+                <h2 class="alt"> Key Components </h2>
+                <br>
+                <div>
+                    <div style="width:35%; height:100%; float: left">
+                        <img src="../resources/images/KVMForum2015-3.png" style="border-style:none; background: rgba(0,0,0,0)" align="left">
+                    </div>
+                </div>
+            </section>
+
+           <section data-transtion="none" data-background-transition="none" data-state="logo-none"> 
+                    <pre class="alt" style="background: rgba(0,0,0,0.8); width: 100%; border: 10px solid #33bb33;">
+                    <code class="alt" id="expand"> 
+
+} </code> </pre>
+            </section>
+
+            <section data-transtion="none" data-background-transition="none" data-state="logo-none"> 
+                <h2 class="alt"> Key Components </h2>
+                <br>
+                <div>
+                    <div style="width:35%; height:100%; float: left">
+                        <img src="../resources/images/KVMForum2015-3.png" style="border-style:none; background: rgba(0,0,0,0)" align="left">
+                    </div>
+                </div>
+            </section>
+
+
+            <section>
+                <h2 class="alt"> Key Components </h2>
+                <div id="list">
+                    <ul>
+                        <li class="fragment">
+                            QMP command definition
+                            <ul>
+                                <li class="fragment">JSON file (qapi/*.json)</li>
+                                <li class="fragment">qmp_commands.hx</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">
+                            Command handler
+                            <ul>
+                                <li class="fragment">blockdev.c</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">
+                            Block Job coroutine
+                            <ul>
+                                <li class="fragment">e.g. block/stream.c</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">
+                            Schedule job completion / cleanup
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h2 class="alt"> QMP command definition  </h2>
+            </section>
+        </section>
+
+
+    <section>
+        <section data-state="no-dark-overlay">
+            <h2 class="alt">Questions?</h2>
+            <img src="../resources/images/simpsons-no-loop.gif" height=500px class="fragment" id="print-never">
+        </section>
+    </section>
+
+
+    <section data-state="no-dark-overlay"
+        data-background-video="../resources/videos/conveyer.mp4"
+        data-background-video-loop="false"
+        data-background="#111111">
+
+        <h1 class="alt">THE END</h1>
+        <hr>
+        <h4>Jeff Cody | <font color=#cb2026> Red Hat, Inc.</font></h4>
+            <small>
+        <div style="background-color:#000000;opacity:0.7">
+                Presentation available at: <a href="http://qemu.rocks/jtc-kvm2015">http://qemu.rocks/jtc-kvm2015</a>
+        </div>
+            </small>
+    </section>
+
+</div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<div id="initializer">
+<!-- grabstart -->
+<script>
+
+var printaction = window.location.search.match( /print-pdf/gi ) ? 'printing' : '';
+var parallaxImage;
+if (printaction) {
+    document.body.style.backgroundImage="url('../resources/images/jeffcody-droplet_0867-1056x769.JPG')";
+    document.body.style.backgroundRepeat="repeat-y";
+} else {
+    //parallaxImage = '../resources/images/jeffcody-droplet_0893-2500x1406.JPG';
+    //parallaxImage = '../resources/images/jeffcody-droplet_0867-2500x1406-dark.JPG';
+    parallaxImage = '../resources/images/jeffcody-droplet_0867-2500x1406-dark-lowsat.JPG';
+    //parallaxImage = '../resources/images/seattle.jpg';
+}
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+controls: true,
+progress: true,
+history: true,
+center: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+parallaxBackgroundImage: parallaxImage,
+parallaxBackgroundSize: '2500px 1406px',
+
+multiplex: {
+    // Example values. To generate your own, see the socket.io server instructions.
+    secret: 'null', // Obtained from the socket.io server. Gives this (the master) control of the presentation
+    id: 'e74af6d20e374e17', // Obtained from socket.io server
+    url: 'revealjs.jit.su:80' // Location of socket.io server
+},
+
+
+// Optional libraries used to extend on reveal.js
+//     { src: 'http://revealjs.jit.su/socket.io/socket.io.js', async: true }, 
+dependencies: [
+{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+{ src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.10/socket.io.min.js', async: true },
+{ src: 'plugin/multiplex/client.js', async: true },
+{ src: 'plugin/multiplex/master.js', async: true }
+]
+});
+
+</script>
+<!-- grabend -->
+</div>
+
+<script>
+var link = document.querySelector('link[rel="import"]');
+var content = link.import;
+
+var template = link.import.querySelector('template');
+var clone = document.importNode(template.content, true);
+
+if (clone) {
+    document.querySelector('#initializer').innerHTML = '';
+    document.querySelector('#initializer').appendChild(clone);
+}
+</script>
+
+</body>
+</html>

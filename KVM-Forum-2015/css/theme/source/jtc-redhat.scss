@@ -1,0 +1,257 @@
+/**
+ * Red Hat theme for reveal.js.
+ * Author: Jeff Cody
+ * based on solarized dark theme by Achim Staebler
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+//@font-face {
+//	font-family: 'League Gothic';
+//	src: url('../../lib/font/league_gothic-webfont.eot');
+//	src: url('../../lib/font/league_gothic-webfont.eot?#iefix') format('embedded-opentype'),
+//		 url('../../lib/font/league_gothic-webfont.woff') format('woff'),
+//		 url('../../lib/font/league_gothic-webfont.ttf') format('truetype'),
+//		 url('../../lib/font/league_gothic-webfont.svg#LeagueGothicRegular') format('svg');
+//
+//	font-weight: normal;
+//	font-style: normal;
+//}
+//
+//@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+//@import url(https://fonts.googleapis.com/css?family=Roboto%20Slab:400,700,400italic,700italic);
+//@import url(http://fonts.googleapis.com/css?family=Changa+One|Righteous|Open+Sans);
+
+@import "../../../resources/fonts/overpass.css";
+
+
+/**
+ * Solarized colors by Ethan Schoonover
+ */
+html * {
+	color-profile: sRGB;
+	rendering-intent: auto;
+}
+
+// Solarized colors
+$base03:    #002b36;
+$base02:    #073642;
+$base01:    #ffffff;
+$base00:    #eeeeee;
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+
+// Override theme settings (see ../template/settings.scss)
+$mainColor: $base00;
+$headingColor: $base01;
+$headingTextShadow: 3px 3px 0 #000, -1px -1px 0 #000,  1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+$backgroundColor: $base3;
+$linkColor: $blue;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: $magenta;
+$headingTextTransform: none;
+
+// $mainFont: "Roboto Slab", sans-serif;
+$mainFont: 'Overpass',Overpass,Helvetica,helvetica,arial,sans-serif;
+$headingFont: 'Overpass',Overpass,Helvetica,helvetica,arial,sans-serif;
+$mainFontSize: 48px;
+
+// Background generator
+// @mixin bodyBackground() {
+// 	@include radial-gradient( rgba($base3,1), rgba(lighten($base3, 20%),1) );
+// }
+
+.reveal body {
+    background-image: url('../resources/images/space_needle.jpg') !important;
+}
+
+.reveal #list { color:#eee; 
+   -webkit-text-stroke: 1px black;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+
+.reveal #list ul li { padding: 0 0 5px 0px; } 
+.reveal #list ul li ul { list-style-image: url("../../../resources/images/nested.png"); padding:5px 0 5px 48px; font-size:42px }
+.reveal #list ul li ul #straight{ list-style-image: url("../../../resources/images/nested-straight.png"); padding:0px 0 5px 48px; font-size:42px }
+.reveal #list ul li ul li { color:#ede490; height: 48px; margin-left:10px; padding:0px 0 0px 0;}
+.reveal #list ul li ul li ul { list-style-image: none; list-style-type: square; padding:0px 0 5px 0; font-size: 42px}
+.reveal #list ul li ul li ul li { color:#ede490; height: 48px; margin-left:10px; padding:0px 0 0px 0;}
+
+.reveal #list ol li { padding: 0 0 5px 0px; } 
+.reveal #list ol li ol { list-style-image: url("../../../resources/images/nested.png"); padding:5px 0 5px 48px; font-size:42px }
+.reveal #list #straight ol li ol { list-style-image: url("../../../resources/images/nested-straight.png"); padding:5px 0 5px 48px; font-size:42px }
+.reveal #list ol li ol li { color:#ede490; height: 48px; margin-left:10px; padding:0px 0 0px 0;}
+.reveal #list ol li ol li ol { list-style-image: none; list-style-type: square; }
+
+.reveal h1.alt,
+.reveal h2.alt {
+  margin: 0 0 20px 0;
+  color: #eee8d5;
+  line-height: $headingLineHeight;
+  letter-spacing: $headingLetterSpacing;
+  text-transform: $headingTextTransform;
+   -webkit-text-stroke: 1px black;
+   color: white;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+
+.reveal alt {
+   -webkit-text-stroke: 1px black;
+   color: white;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+
+
+
+.reveal h1.alt {
+  font-size: 2.00em; }
+
+.reveal h2.alt {
+  font-size: 1.5em; }
+
+.reveal pre.alt {
+    height: 100%;
+    max-height: 100%;
+    padding: 4px;
+    border: 1px solid rgba(255,255,255,0.5);
+
+    font-size: 0.33em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    background: rgba(255,255,255,0.1);
+	box-shadow: -10px 10px 40px rgba(0,0,0,0.9);
+}
+
+.reveal pre code.alt {
+    height: 100%;
+    max-height: 100%;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: rgba(255,255,255,0);
+}
+
+#header-white {
+  background: rgba(0, 0, 0, 0.65);
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  top: 35%;
+  left: 0%;
+  min-width:100%;
+  box-shadow: 0px 10px 40px rgba(0,0,0,0.9);
+  z-index: 1; }
+
+.header-visible #header-white {
+    opacity: 1; }
+
+.reveal #header-white h1,
+.reveal #header-white h2,
+.reveal #header-white h3,
+.reveal #header-white h4,
+.reveal #header-white h5,
+.reveal #header-white h6 {
+  color: #ffffff; }
+
+.reveal #header-white a[href^="mailto:"] {
+  color: #ff5555; }
+
+#logo-white {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  bottom: 3%;
+  left: 3%;
+  z-index: 5; }
+
+#logo-white img {
+  width: 5em; }
+
+#logo-black {
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+  bottom: 3%;
+  left: 3%;
+  z-index: 5; }
+
+#logo-black img {
+  width: 5em; }
+
+.logo-light #logo-white {
+  opacity: 1; }
+.logo-light #logo-black {
+  opacity: 0; }
+
+.logo-none #logo-black {
+  opacity: 0; }
+
+#dark-overlay {
+    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    transition: opacity 0.5s ease-out;
+    min-width: 100%;
+    min-height: 100%;
+    left: 0%;
+    top: 0%;
+    opacity: 1;
+    z-index: 1; }
+
+#dark-box {
+    background: rgba(0, 0, 0, 0.7);
+    position: relative;
+    transition: opacity 0.5s ease-out;
+    min-width: 8920px;
+    min-height: 100%;
+    left: -1000px;
+    top: 0%;
+    opacity: 1;
+    z-index: 1; }
+
+#print-only {
+    display: none;
+}
+
+
+.no-dark-overlay #dark-overlay {
+    opacity: 0; }
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
