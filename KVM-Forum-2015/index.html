@@ -645,6 +645,45 @@ out:
     </section>
 
     <section>
+        <h2 class="alt">Block Job Events</h2>
+        <div id="list">
+            <ul>
+                <li class="fragment">BLOCK_JOB_COMPLETED</li>
+                <li class="fragment">BLOCK_JOB_CANCELLED</li>
+                <li class="fragment">BLOCK_JOB_ERROR</li>
+                <li class="fragment">BLOCK_JOB_READY</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="alt">Block Job Control</h2>
+        <div id="list" align="left">
+            <ul>
+                <li class="fragment">block-job-set-speed
+                <ul>
+                    <li class="fragment">Set maximum speed of block job</li>
+                </ul>
+                </li>
+                <li class="fragment">block-job-cancel
+                <ul>
+                    <li class="fragment">QEMU will emit BLOCK_JOB_CANCELLED</li>
+                </ul>
+                </li>
+                <li class="fragment">block-job-pause
+                </li>
+                <li class="fragment">block-job-resume
+                </li>
+                <li class="fragment">block-job-complete
+                <ul>
+                    <li class="fragment">Send after BLOCK_JOB_READY event</li>
+                </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
         <section data-state="no-dark-overlay">
             <h2 class="alt">Questions?</h2>
             <img src="../resources/images/simpsons-no-loop.gif" height=500px id="print-never">
