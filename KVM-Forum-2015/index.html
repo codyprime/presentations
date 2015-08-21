@@ -117,16 +117,35 @@ var link = document.createElement( 'link' );
 
         <section>
             <section>
-                <h1 class="alt">Current Status</h1>
-                <h3 class="alt">(v2.2.0..)</h3>
+                <h3 class="alt">Current Status (v2.2.0..)</h3>
                     <div class="fragment" id="list" align="left">
                         <ul>
                             <li class="fragment">Four Block Jobs
                             <ul>
-                                <li class="fragment">Backup</li>
-                                <li class="fragment">Stream</li>
-                                <li class="fragment">Commit</li>
-                                <li class="fragment">Mirror</li>
+                                <li class="fragment">Backup
+                                <ul>
+                                    <li class="fragment">Point-in-time drive backup</li>
+                                </ul>
+                                <li id="straight"></li>
+                                </li>
+                                <li class="fragment">Stream
+                                <ul>
+                                    <li class="fragment">Move data in chain into overlays</li>
+                                </ul>
+                                <li id="straight"></li>
+                                </li>
+                                <li class="fragment">Commit
+                                <ul>
+                                    <li class="fragment">Move data from overlays into backing files</li>
+                                </ul>
+                                <li id="straight"></li>
+                                </li>
+                                <li class="fragment">Mirror
+                                <ul>
+                                    <li class="fragment">Mirror drive's write to a new destination</li>
+                                </ul>
+                                <li id="straight"></li>
+                                </li>
                             </ul>
                             </li>
                             <li class="fragment">Block Job infrastructure</li> </ul>
@@ -150,7 +169,8 @@ var link = document.createElement( 'link' );
                                 <li class="fragment">Incremental sync mode added
                                 <ul>
                                     <li class="fragment">(John Snow), v2.4.0+</li>
-                                    <li class="fragment">Incremental backups<br>(see John's presentation!)</li>
+                                    <li class="fragment">Incremental backups (see John's presentation!)</li>
+                                    <li class="fragment"><a href=http://wiki.qemu.org/Features/IncrementalBackup>http://wiki.qemu.org/Features/IncrementalBackup</a></li>
                                 </ul>
                                 </li>
                             </ul>
@@ -159,9 +179,10 @@ var link = document.createElement( 'link' );
                         <ul>
                             <li class="fragment">Patches on list
                                 <ul>
-                                    <li class="fragment">COLO support
+                                    <li class="fragment">COLO support - COarse Grain LOck Stepping
                                     <ul>
                                         <li class="fragment">(Wen Congyang)</li>
+                                        <li class="fragment"><a href="http://wiki.qemu.org/Features/COLO">http://wiki.qemu.org/Features/COLO</a></li>
                                     </ul>
                                     </li>
                                 </ul>
@@ -537,9 +558,7 @@ var link = document.createElement( 'link' );
             <section data-transtion="none" data-background-transition="none" data-state="logo-none"> 
                 <h2 class="alt"> QMP Command Definition </h2>
                 <br>
-                <div>
-                    <div style="width:65%; float: right" class="fragment">
-                    <pre class="alt" style="background: rgba(0,0,0,0.8); width: 100%; border: 10px solid #33bb33;">
+                    <pre class="alt" style="background: rgba(0,0,0,0.8); width: 100%; border: 10px solid #33bb33;font-size:0.50em">
                     <code class="alt" id="expand"> 
 { 'enum': 'BlockJobType',
   'data': ['commit', 'stream', 'mirror', 'backup', 'null'] }
@@ -548,8 +567,6 @@ var link = document.createElement( 'link' );
   'data': { 'device': 'str', '*speed': 'int' } }
                     </code>
                     </pre>
-                    </div>
-                </div>
             </section>
 
             <section>
@@ -602,8 +619,9 @@ out:
                 <li class="fragment">Coroutine loop
                 <ul>
                     <div class="fragment">
-                    <li>Cooperative - must sleep
+                    <li>Cooperative - must yield
                     <ul>
+                        <li> Sleep time derived from throttle speed</li>
                         <li><code>block_job_sleep_ns()</code></li>
                     </ul>
                     <li id="straight"></li>
@@ -647,6 +665,19 @@ out:
                 Presentation available at: <a href="http://qemu.rocks/jtc-kvm2015">http://qemu.rocks/jtc-kvm2015</a>
         </div>
             </small>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <small style="font-size: 0.38em">Videos from <a href="http://www.wedistill.io">wedistill.io</a>: Robert Cole (title slide), Tyler Finck (end slide)
+                <br>
+                Videos licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons Zero License</a>
+                <br></small>
     </section>
 
 </div>
