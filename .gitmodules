@@ -1,0 +1,3 @@
+[submodule "KVM-Forum-2016"]
+	path = KVM-Forum-2016
+	url = https://github.com/hakimel/reveal.js.git
