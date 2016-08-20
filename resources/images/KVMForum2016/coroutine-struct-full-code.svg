@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="764.38861"
+   height="249.36668"
+   viewBox="0 0 764.3886 249.36668"
+   id="svg7033"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="coroutine-struct-full-code.svg">
+  <defs
+     id="defs7035">
+    <marker
+       inkscape:stockid="SquareM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="SquareM"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5989"
+         d="M -5,-5 -5,5 5,5 5,-5 -5,-5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5943"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6,-0.6)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="324.33192"
+     inkscape:cy="141.29977"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer12"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     inkscape:window-x="0"
+     inkscape:window-y="384"
+     inkscape:window-maximized="1"
+     units="px"
+     showguides="false" />
+  <metadata
+     id="metadata7038">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="base"
+     style="display:inline"
+     transform="translate(41.428545,-1.8841762)" />
+  <g
+     inkscape:label="fragment1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(2094.2875,587.0933)"
+     style="display:inline">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot7161"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="translate(-2052.8589,-588.97747)"><flowRegion
+         id="flowRegion7163"><rect
+           id="rect7165"
+           width="490.71429"
+           height="110"
+           x="80"
+           y="-27.320711" /></flowRegion><flowPara
+         id="flowPara7167"></flowPara></flowRoot>    <rect
+       style="opacity:0;fill:#ffeeaa;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+       id="rect8081"
+       width="20.714285"
+       height="107.85714"
+       x="-1867.1447"
+       y="-576.29816" />
+    <rect
+       style="opacity:0;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+       id="rect8083"
+       width="21.428572"
+       height="106.42857"
+       x="-1867.8589"
+       y="-577.01245" />
+    <rect
+       y="-577.28424"
+       x="-1844.7406"
+       height="21.268866"
+       width="216.4294"
+       id="rect7769"
+       style="display:inline;fill:#ffeeaa;fill-opacity:1;stroke:#000000;stroke-width:0.73590338;stroke-opacity:1" />
+    <text
+       transform="scale(1.0045785,0.99544236)"
+       sodipodi:linespacing="125%"
+       id="text7773"
+       y="-564.69653"
+       x="-1825.0895"
+       style="font-style:normal;font-weight:normal;font-size:95.51941681px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:transform-center-y="2.8571436"><tspan
+         id="tspan7775"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono'"
+         y="-564.69653"
+         x="-1825.0895"
+         sodipodi:role="line">*entry</tspan><tspan
+         id="tspan7777"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.8798542px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono'"
+         y="-545.94653"
+         x="-1825.0895"
+         sodipodi:role="line" /></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="fragment2"
+     style="display:inline"
+     transform="translate(41.428545,-1.8841762)">
+    <path
+       style="display:inline;fill:#ff8080;fill-rule:evenodd;stroke:#ffaaaa;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 416.42857,22.679288 65.71429,-7.857142 -2.85714,0 0,0"
+       id="path8293"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#ff8080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="486.42856"
+       y="18.393574"
+       id="text8295"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan8297"
+         x="486.42856"
+         y="18.393574"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;font-size:17.5px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, Condensed';fill:#ff8080">function ptr</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="fragment3"
+     style="display:inline"
+     transform="translate(41.428545,-1.8841762)">
+    <rect
+       transform="translate(2052.8589,588.97747)"
+       style="display:inline;fill:#ffeeaa;fill-opacity:1;stroke:#000000;stroke-width:0.73590338;stroke-opacity:1"
+       id="rect7771"
+       width="216.4294"
+       height="21.268866"
+       x="-1844.7406"
+       y="-555.43298" />
+    <text
+       inkscape:transform-center-y="2.8571436"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:95.51941681px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-1825.0894"
+       y="-543.16986"
+       id="text7779"
+       sodipodi:linespacing="125%"
+       transform="matrix(1.0045785,0,0,0.99544236,2052.8589,588.97747)"><tspan
+         sodipodi:role="line"
+         x="-1825.0894"
+         y="-543.16986"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono'"
+         id="tspan7781">*entry_arg <tspan
+   style="font-size:10px"
+   id="tspan8073">(aka *opaque)</tspan></tspan><tspan
+         sodipodi:role="line"
+         x="-1825.0894"
+         y="-524.41986"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.8798542px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono'"
+         id="tspan7783" /></text>
+    <text
+       transform="translate(0,-2.3e-6)"
+       sodipodi:linespacing="125%"
+       id="text8301"
+       y="40.53643"
+       x="485.71426"
+       style="display:inline;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff8080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;font-size:17.5px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, Condensed';fill:#ff8080"
+         y="40.53643"
+         x="485.71426"
+         id="tspan8303"
+         sodipodi:role="line">function arg (opaque)</tspan></text>
+    <path
+       transform="translate(0,-2.3e-6)"
+       inkscape:connector-curvature="0"
+       id="path8307"
+       d="m 416.42857,44.107859 65.71429,-7.857142 -2.85714,0 0,0"
+       style="display:inline;fill:#ff8080;fill-rule:evenodd;stroke:#ffaaaa;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="fragment4"
+     style="display:inline"
+     transform="translate(41.428558,2.9998738)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="fragment5"
+     style="display:inline"
+     transform="translate(41.428558,2.9998738)">
+    <rect
+       transform="translate(2052.8589,584.09342)"
+       y="-533.65802"
+       x="-1844.7113"
+       height="21.268866"
+       width="216.4294"
+       id="rect7755"
+       style="display:inline;fill:#aca793;fill-opacity:1;stroke:#000000;stroke-width:0.73590338;stroke-opacity:1" />
+    <text
+       inkscape:transform-center-y="2.8571436"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:95.51941681px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-1825.8005"
+       y="-521.64319"
+       id="text8075"
+       sodipodi:linespacing="125%"
+       transform="matrix(1.0045785,0,0,0.99544236,2052.8589,584.09342)"><tspan
+         sodipodi:role="line"
+         x="-1825.8005"
+         y="-521.64319"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono'"
+         id="tspan8077">*caller</tspan><tspan
+         sodipodi:role="line"
+         x="-1825.8005"
+         y="-502.89319"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.8798542px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono'"
+         id="tspan8079" /></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer7"
+     inkscape:label="fragment6"
+     style="display:inline"
+     transform="translate(41.428558,2.9998738)">
+    <path
+       transform="translate(-1.328125e-5,-4.8840523)"
+       style="display:inline;fill:#ff8080;fill-rule:evenodd;stroke:#ffaaaa;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 416.42857,65.53643 65.71429,-7.857142 -2.85714,0 0,0"
+       id="path8309"
+       inkscape:connector-curvature="0" />
+    <text
+       transform="translate(-1.328125e-5,-4.8840523)"
+       sodipodi:linespacing="125%"
+       id="text8311"
+       y="61.250717"
+       x="486.42856"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#ff8080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;font-size:17.5px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, Condensed';fill:#ff8080"
+         y="61.250717"
+         x="486.42856"
+         id="tspan8313"
+         sodipodi:role="line">caller (everything's a coroutine)</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer8"
+     inkscape:label="fragment7"
+     style="display:inline"
+     transform="translate(41.428558,2.9998738)">
+    <rect
+       transform="translate(2052.8589,584.09342)"
+       style="display:inline;fill:#aca793;fill-opacity:1;stroke:#000000;stroke-width:0.73590338;stroke-opacity:1"
+       id="rect3336-7-4"
+       width="216.4294"
+       height="21.268866"
+       x="-1844.7406"
+       y="-511.56998" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:95.51941681px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-1826.5117"
+       y="-497.96381"
+       id="text4182-8-0"
+       sodipodi:linespacing="125%"
+       transform="matrix(1.0045785,0,0,0.99544236,2052.8589,584.09342)"><tspan
+         sodipodi:role="line"
+         x="-1826.5117"
+         y="-497.96381"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono'"
+         id="tspan6771">*pool_next</tspan><tspan
+         sodipodi:role="line"
+         x="-1826.5117"
+         y="-479.21381"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.8798542px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono'"
+         id="tspan5837-2" /></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer9"
+     inkscape:label="fragment8"
+     style="display:inline"
+     transform="translate(41.428558,2.9998738)">
+    <text
+       transform="translate(-1.328125e-5,-4.8840523)"
+       sodipodi:linespacing="125%"
+       id="text8392"
+       y="82.679291"
+       x="486.42856"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#ff8080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;font-size:17.5px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, Condensed';fill:#ff8080"
+         y="82.679291"
+         x="486.42856"
+         id="tspan8394"
+         sodipodi:role="line">coroutine pool list element ptr</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path8390"
+       d="m 416.42856,82.795235 65.71429,-7.857142 -2.85714,0 0,0"
+       style="display:inline;fill:#ff8080;fill-rule:evenodd;stroke:#ffaaaa;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer10"
+     inkscape:label="fragment9"
+     style="display:inline"
+     transform="translate(41.428558,2.9998738)">
+    <rect
+       transform="translate(2052.8589,584.09342)"
+       y="-489.71872"
+       x="-1844.7406"
+       height="21.268866"
+       width="216.4294"
+       id="rect5884"
+       style="display:inline;fill:#aca793;fill-opacity:1;stroke:#000000;stroke-width:0.73590338;stroke-opacity:1" />
+    <rect
+       style="display:inline;fill:#aca793;fill-opacity:1;stroke:#000000;stroke-width:0.47154453;stroke-opacity:1"
+       id="rect3336-7-4-4"
+       width="87.776787"
+       height="21.532019"
+       x="-1599.4927"
+       y="-490.20169"
+       transform="translate(2052.8589,584.09342)" />
+    <rect
+       transform="translate(2052.8589,584.09342)"
+       style="display:inline;fill:#aca793;fill-opacity:1;stroke:#000000;stroke-width:0.47154453;stroke-opacity:1"
+       id="rect3336-7-4-4-5"
+       width="87.776787"
+       height="21.532019"
+       x="-1452.2966"
+       y="-490.70151" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:95.51941681px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-1819.2788"
+       y="-477.65491"
+       id="text4182-8"
+       sodipodi:linespacing="125%"
+       transform="matrix(1.0045785,0,0,0.99544236,2052.8589,584.09342)"><tspan
+         sodipodi:role="line"
+         id="tspan4184-7"
+         x="-1819.2788"
+         y="-477.65491"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono'">co_queue_wakeup</tspan><tspan
+         sodipodi:role="line"
+         x="-1819.2788"
+         y="-458.90491"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.8798542px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono'"
+         id="tspan5837" /></text>
+    <text
+       transform="translate(2052.8589,584.09342)"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-1502.9523"
+       y="-477.27872"
+       id="text5896"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5898"
+         x="-1502.9523"
+         y="-477.27872">...</tspan></text>
+    <path
+       transform="translate(2052.8589,584.09342)"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.62639451px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#SquareM);marker-end:url(#Arrow2Mend)"
+       d="m -1682.3773,-478.93185 76.6866,0"
+       id="path5910"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer11"
+     inkscape:label="fragment10"
+     style="display:inline"
+     transform="translate(41.428558,2.9998738)">
+    <path
+       style="display:inline;fill:#ff8080;fill-rule:evenodd;stroke:#ffaaaa;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 417.73425,110.93027 63.10145,19.95769 -2.60258,-1.1789 0,0"
+       id="path8405"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#ff8080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="486.42856"
+       y="138.40439"
+       id="text8431"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="486.42856"
+         y="138.40439"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;font-size:17.5px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, Condensed';fill:#ff8080"
+         id="tspan8435">wakeup co queue </tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer12"
+     inkscape:label="fragment11"
+     style="display:inline"
+     transform="translate(41.428558,2.9998738)">
+    <rect
+       transform="translate(2052.8589,584.09342)"
+       style="display:inline;opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.77542412;stroke-opacity:1"
+       id="rect8085"
+       width="19.63656"
+       height="64.959343"
+       x="-1864.7108"
+       y="-577.28986" />
+    <rect
+       transform="translate(2052.8589,584.09342)"
+       y="-512.7066"
+       x="-1864.7773"
+       height="44.280968"
+       width="19.769604"
+       id="rect8156"
+       style="display:inline;opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.64238191;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:42.81840134px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#ffeeaa;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-103.83317"
+       y="203.19379"
+       id="text8087"
+       sodipodi:linespacing="125%"
+       transform="matrix(0,-1,1,0,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan8089"
+         x="-103.83317"
+         y="203.19379"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.71882629px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';fill:#ffeeaa">Coroutine</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer13"
+     inkscape:label="fragment12"
+     style="display:inline"
+     transform="translate(41.428558,2.9998738)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:63.88479996px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-41.428558"
+       y="81.436501"
+       id="text5714"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5716"
+         x="-41.428558"
+         y="81.436501" /><tspan
+         sodipodi:role="line"
+         x="-41.428558"
+         y="109.469"
+         id="tspan5718"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">struct Coroutine {</tspan><tspan
+         sodipodi:role="line"
+         x="-41.428558"
+         y="124.44201"
+         id="tspan5720"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    CoroutineEntry *entry;</tspan><tspan
+         sodipodi:role="line"
+         x="-41.428558"
+         y="139.41501"
+         id="tspan5722"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    void *entry_arg;</tspan><tspan
+         sodipodi:role="line"
+         x="-41.428558"
+         y="154.388"
+         id="tspan5724"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    Coroutine *caller;</tspan><tspan
+         sodipodi:role="line"
+         x="-41.428558"
+         y="169.36101"
+         id="tspan5726"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    QSLIST_ENTRY(Coroutine) pool_next;</tspan><tspan
+         sodipodi:role="line"
+         x="-41.428558"
+         y="184.334"
+         id="tspan5728"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6" /><tspan
+         sodipodi:role="line"
+         x="-41.428558"
+         y="199.30701"
+         id="tspan5730"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    /* Coroutines that should be woken up when we yield or terminate */</tspan><tspan
+         sodipodi:role="line"
+         x="-41.428558"
+         y="214.28001"
+         id="tspan5732"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    QSIMPLEQ_HEAD(, Coroutine) co_queue_wakeup;</tspan><tspan
+         sodipodi:role="line"
+         x="-41.428558"
+         y="229.25301"
+         id="tspan5734"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    QSIMPLEQ_ENTRY(Coroutine) co_queue_next;</tspan><tspan
+         sodipodi:role="line"
+         x="-41.428558"
+         y="244.22601"
+         id="tspan5736"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">};</tspan></text>
+  </g>
+</svg>
