@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="2172.7622"
-   height="904.59583"
-   viewBox="0 0 2172.7623 904.59584"
+   width="893.11481"
+   height="222.46777"
+   viewBox="0 0 893.11482 222.46778"
    id="svg3431"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -218,11 +218,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.45254834"
-     inkscape:cx="805.09316"
-     inkscape:cy="484.25048"
+     inkscape:zoom="0.90509668"
+     inkscape:cx="457.31144"
+     inkscape:cy="-7.4816732"
      inkscape:document-units="px"
-     inkscape:current-layer="layer6"
+     inkscape:current-layer="layer7"
      showgrid="false"
      inkscape:window-width="1366"
      inkscape:window-height="739"
@@ -244,7 +244,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -253,9 +253,9 @@
      inkscape:groupmode="layer"
      id="layer1"
      style="display:inline"
-     transform="translate(1971.5399,-550.30717)">
+     transform="translate(1971.5399,-550.30714)">
     <g
-       transform="translate(-2027.7675,674.82266)"
+       transform="matrix(0.41105038,0,0,0.41105038,-1994.6523,601.48929)"
        style="display:inline;filter:url(#filter5629)"
        id="g4613">
       <g
@@ -539,7 +539,7 @@
      id="layer3"
      inkscape:label="fragment1"
      style="display:inline"
-     transform="translate(1971.5399,-550.30717)">
+     transform="translate(1971.5399,-550.30714)">
     <flowRoot
        xml:space="preserve"
        id="flowRoot3459"
@@ -563,11 +563,12 @@
        width="1648.569"
        height="444.46713"
        x="-1612.6616"
-       y="602.61102" />
+       y="602.61102"
+       transform="matrix(0.41105038,0,0,0.41105038,-1161.1377,324.10318)" />
     <g
        id="g4751"
        style="display:inline;filter:url(#filter5617)"
-       transform="translate(-2027.7675,674.82266)">
+       transform="matrix(0.41105038,0,0,0.41105038,-1994.6523,601.48929)">
       <g
          style="display:inline;fill:#eae08e;fill-opacity:1;stroke:#000000;stroke-opacity:1"
          id="g4753"
@@ -845,46 +846,46 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-1577.63"
-       y="707.0127"
+       style="font-style:normal;font-weight:normal;font-size:16.44201469px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-1809.623"
+       y="614.72101"
        id="text3443"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3445"
-         x="-1577.63"
-         y="707.0127"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35px;font-family:FreeMono;-inkscape-font-specification:'FreeMono Italic';fill:#ececec">/**</tspan><tspan
+         x="-1809.623"
+         y="614.72101"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.38676357px;font-family:FreeMono;-inkscape-font-specification:'FreeMono Italic';fill:#ececec">/**</tspan><tspan
          sodipodi:role="line"
-         x="-1577.63"
-         y="750.7627"
+         x="-1809.623"
+         y="632.70447"
          id="tspan3447"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35px;font-family:FreeMono;-inkscape-font-specification:'FreeMono Italic';fill:#ececec"> * Create a new coroutine</tspan><tspan
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.38676357px;font-family:FreeMono;-inkscape-font-specification:'FreeMono Italic';fill:#ececec"> * Create a new coroutine</tspan><tspan
          sodipodi:role="line"
-         x="-1577.63"
-         y="794.5127"
+         x="-1809.623"
+         y="650.68793"
          id="tspan3449"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35px;font-family:FreeMono;-inkscape-font-specification:'FreeMono Italic';fill:#ececec"> *</tspan><tspan
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.38676357px;font-family:FreeMono;-inkscape-font-specification:'FreeMono Italic';fill:#ececec"> *</tspan><tspan
          sodipodi:role="line"
-         x="-1577.63"
-         y="838.2627"
+         x="-1809.623"
+         y="668.67139"
          id="tspan3451"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35px;font-family:FreeMono;-inkscape-font-specification:'FreeMono Italic';fill:#ececec"> * Use qemu_coroutine_enter() to actually transfer control to the coroutine.</tspan><tspan
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.38676357px;font-family:FreeMono;-inkscape-font-specification:'FreeMono Italic';fill:#ececec"> * Use qemu_coroutine_enter() to actually transfer control to the coroutine.</tspan><tspan
          sodipodi:role="line"
-         x="-1577.63"
-         y="882.0127"
+         x="-1809.623"
+         y="686.65485"
          id="tspan3453"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35px;font-family:FreeMono;-inkscape-font-specification:'FreeMono Italic';fill:#ececec"> * The opaque argument is passed as the argument to the entry point.</tspan><tspan
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.38676357px;font-family:FreeMono;-inkscape-font-specification:'FreeMono Italic';fill:#ececec"> * The opaque argument is passed as the argument to the entry point.</tspan><tspan
          sodipodi:role="line"
-         x="-1577.63"
-         y="925.7627"
+         x="-1809.623"
+         y="704.63831"
          id="tspan3455"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35px;font-family:FreeMono;-inkscape-font-specification:'FreeMono Italic';fill:#ececec"> */</tspan><tspan
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.38676357px;font-family:FreeMono;-inkscape-font-specification:'FreeMono Italic';fill:#ececec"> */</tspan><tspan
          sodipodi:role="line"
-         x="-1577.63"
-         y="968.69238"
+         x="-1809.623"
+         y="722.28455"
          id="tspan3457"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35px;font-family:'Oxygen Mono';-inkscape-font-specification:'Oxygen Mono';fill:#ffffff"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.38676357px;font-family:'Oxygen Mono';-inkscape-font-specification:'Oxygen Mono';fill:#ffffff"><tspan
    style="fill:#ffd42a"
    id="tspan4222">Coroutine</tspan> *qemu_coroutine_create(<tspan
    style="fill:#ffd42a"
@@ -897,7 +898,7 @@
      id="layer4"
      inkscape:label="fragment2"
      style="display:inline"
-     transform="translate(-124.72864,115.67666)">
+     transform="translate(-124.72864,115.67669)">
     <rect
        style="fill:#000000;fill-opacity:0;stroke:#e9eff0;stroke-width:0.94680315;stroke-opacity:0"
        id="rect4264"
@@ -915,7 +916,7 @@
          transform="translate(2096.2685,-665.98383)" />
     </g>
     <g
-       transform="translate(319.20822,-379.81738)"
+       transform="matrix(0.41105038,0,0,0.41105038,204.66955,-224.25182)"
        style="display:inline"
        id="g5449">
       <rect
@@ -961,7 +962,7 @@
     <g
        style="display:inline;filter:url(#filter5605)"
        id="g4889"
-       transform="translate(68.500974,8.8388357)">
+       transform="matrix(0.41105038,0,0,0.41105038,101.61624,-64.494536)">
       <g
          transform="translate(2096.2685,-665.98383)"
          id="g4891"
@@ -1243,11 +1244,11 @@
      id="layer6"
      inkscape:label="fragment3"
      style="display:inline"
-     transform="translate(-124.72864,115.67666)">
+     transform="translate(-124.72864,115.67669)">
     <g
        style="display:inline"
        id="g5415"
-       transform="translate(311.42859,-382.85717)">
+       transform="matrix(0.41105038,0,0,0.41105038,201.47173,-225.50133)">
       <rect
          transform="translate(2096.2685,-665.98383)"
          style="display:inline;fill:#0e2b48;fill-opacity:1;stroke:#e9eff0;stroke-opacity:0;filter:url(#filter4236)"
@@ -1306,7 +1307,7 @@
     <g
        id="g5119"
        style="display:inline;filter:url(#filter5593)"
-       transform="translate(68.500974,8.8388357)">
+       transform="matrix(0.41105038,0,0,0.41105038,101.61624,-64.494536)">
       <g
          style="display:inline;fill:#eae08e;fill-opacity:1;stroke:#000000;stroke-opacity:1"
          id="g5121"
@@ -1588,10 +1589,10 @@
      id="layer7"
      inkscape:label="fragment4"
      style="display:inline"
-     transform="translate(-124.72864,115.67666)">
+     transform="translate(-124.72864,115.67669)">
     <g
        id="g5428"
-       transform="translate(338.87603,-383.11969)">
+       transform="matrix(0.41105038,0,0,0.41105038,212.75401,-225.60924)">
       <g
          id="g5519">
         <rect
@@ -1672,7 +1673,7 @@
     <g
        style="display:inline;filter:url(#filter5581)"
        id="g4566"
-       transform="translate(68.500974,8.8388357)">
+       transform="matrix(0.41105038,0,0,0.41105038,101.61624,-64.494536)">
       <g
          style="display:inline;fill:#eae08e;fill-opacity:1;stroke:#000000;stroke-opacity:1"
          id="g4277"
@@ -1954,5 +1955,5 @@
      id="layer8"
      inkscape:label="fragment5"
      style="display:inline"
-     transform="translate(-124.72864,115.67666)" />
+     transform="translate(-124.72864,115.67669)" />
 </svg>
