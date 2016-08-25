@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="764.38861"
-   height="249.36668"
-   viewBox="0 0 764.3886 249.36668"
+   width="867.75684"
+   height="276.48254"
+   viewBox="0 0 867.75682 276.48254"
    id="svg7033"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -57,19 +57,19 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="324.33192"
-     inkscape:cy="141.29977"
+     inkscape:cx="591.41999"
+     inkscape:cy="172.64715"
      inkscape:document-units="px"
-     inkscape:current-layer="layer12"
+     inkscape:current-layer="layer13"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1920"
-     inkscape:window-height="1051"
+     inkscape:window-width="1366"
+     inkscape:window-height="739"
      inkscape:window-x="0"
-     inkscape:window-y="384"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      units="px"
      showguides="false" />
@@ -90,12 +90,12 @@
      id="layer3"
      inkscape:label="base"
      style="display:inline"
-     transform="translate(41.428545,-1.8841762)" />
+     transform="translate(130.71427,-5.0976753)" />
   <g
      inkscape:label="fragment1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(2094.2875,587.0933)"
+     transform="translate(2183.5732,583.8798)"
      style="display:inline">
     <flowRoot
        xml:space="preserve"
@@ -108,7 +108,7 @@
            height="110"
            x="80"
            y="-27.320711" /></flowRegion><flowPara
-         id="flowPara7167"></flowPara></flowRoot>    <rect
+         id="flowPara7167" /></flowRoot>    <rect
        style="opacity:0;fill:#ffeeaa;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        id="rect8081"
        width="20.714285"
@@ -154,7 +154,7 @@
      id="layer4"
      inkscape:label="fragment2"
      style="display:inline"
-     transform="translate(41.428545,-1.8841762)">
+     transform="translate(130.71427,-5.0976753)">
     <path
        style="display:inline;fill:#ff8080;fill-rule:evenodd;stroke:#ffaaaa;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 416.42857,22.679288 65.71429,-7.857142 -2.85714,0 0,0"
@@ -178,7 +178,7 @@
      id="layer2"
      inkscape:label="fragment3"
      style="display:inline"
-     transform="translate(41.428545,-1.8841762)">
+     transform="translate(130.71427,-5.0976753)">
     <rect
        transform="translate(2052.8589,588.97747)"
        style="display:inline;fill:#ffeeaa;fill-opacity:1;stroke:#000000;stroke-width:0.73590338;stroke-opacity:1"
@@ -214,7 +214,7 @@
        id="text8301"
        y="40.53643"
        x="485.71426"
-       style="display:inline;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff8080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#ff8080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:condensed;font-size:17.5px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, Condensed';fill:#ff8080"
          y="40.53643"
@@ -233,13 +233,13 @@
      id="layer5"
      inkscape:label="fragment4"
      style="display:inline"
-     transform="translate(41.428558,2.9998738)" />
+     transform="translate(130.71428,-0.21362532)" />
   <g
      inkscape:groupmode="layer"
      id="layer6"
      inkscape:label="fragment5"
      style="display:inline"
-     transform="translate(41.428558,2.9998738)">
+     transform="translate(130.71428,-0.21362532)">
     <rect
        transform="translate(2052.8589,584.09342)"
        y="-533.65802"
@@ -273,7 +273,7 @@
      id="layer7"
      inkscape:label="fragment6"
      style="display:inline"
-     transform="translate(41.428558,2.9998738)">
+     transform="translate(130.71428,-0.21362532)">
     <path
        transform="translate(-1.328125e-5,-4.8840523)"
        style="display:inline;fill:#ff8080;fill-rule:evenodd;stroke:#ffaaaa;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -299,7 +299,7 @@
      id="layer8"
      inkscape:label="fragment7"
      style="display:inline"
-     transform="translate(41.428558,2.9998738)">
+     transform="translate(130.71428,-0.21362532)">
     <rect
        transform="translate(2052.8589,584.09342)"
        style="display:inline;fill:#aca793;fill-opacity:1;stroke:#000000;stroke-width:0.73590338;stroke-opacity:1"
@@ -332,7 +332,7 @@
      id="layer9"
      inkscape:label="fragment8"
      style="display:inline"
-     transform="translate(41.428558,2.9998738)">
+     transform="translate(130.71428,-0.21362532)">
     <text
        transform="translate(-1.328125e-5,-4.8840523)"
        sodipodi:linespacing="125%"
@@ -357,7 +357,7 @@
      id="layer10"
      inkscape:label="fragment9"
      style="display:inline"
-     transform="translate(41.428558,2.9998738)">
+     transform="translate(130.71428,-0.21362532)">
     <rect
        transform="translate(2052.8589,584.09342)"
        y="-489.71872"
@@ -424,7 +424,7 @@
      id="layer11"
      inkscape:label="fragment10"
      style="display:inline"
-     transform="translate(41.428558,2.9998738)">
+     transform="translate(130.71428,-0.21362532)">
     <path
        style="display:inline;fill:#ff8080;fill-rule:evenodd;stroke:#ffaaaa;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 417.73425,110.93027 63.10145,19.95769 -2.60258,-1.1789 0,0"
@@ -448,7 +448,7 @@
      id="layer12"
      inkscape:label="fragment11"
      style="display:inline"
-     transform="translate(41.428558,2.9998738)">
+     transform="translate(130.71428,-0.21362532)">
     <rect
        transform="translate(2052.8589,584.09342)"
        style="display:inline;opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.77542412;stroke-opacity:1"
@@ -484,67 +484,67 @@
      id="layer13"
      inkscape:label="fragment12"
      style="display:inline"
-     transform="translate(41.428558,2.9998738)">
+     transform="translate(130.71428,-0.21362532)">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:63.88479996px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-41.428558"
-       y="81.436501"
+       style="font-style:normal;font-weight:normal;font-size:77.21755981px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-130.71428"
+       y="77.467537"
        id="text5714"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5716"
-         x="-41.428558"
-         y="81.436501" /><tspan
+         x="-130.71428"
+         y="77.467537" /><tspan
          sodipodi:role="line"
-         x="-41.428558"
-         y="109.469"
+         x="-130.71428"
+         y="111.45418"
          id="tspan5718"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">struct Coroutine {</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.47829247px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">struct Coroutine {</tspan><tspan
          sodipodi:role="line"
-         x="-41.428558"
-         y="124.44201"
+         x="-130.71428"
+         y="129.55205"
          id="tspan5720"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    CoroutineEntry *entry;</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.47829247px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    CoroutineEntry *entry;</tspan><tspan
          sodipodi:role="line"
-         x="-41.428558"
-         y="139.41501"
+         x="-130.71428"
+         y="147.6499"
          id="tspan5722"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    void *entry_arg;</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.47829247px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    void *entry_arg;</tspan><tspan
          sodipodi:role="line"
-         x="-41.428558"
-         y="154.388"
+         x="-130.71428"
+         y="165.74777"
          id="tspan5724"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    Coroutine *caller;</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.47829247px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    Coroutine *caller;</tspan><tspan
          sodipodi:role="line"
-         x="-41.428558"
-         y="169.36101"
+         x="-130.71428"
+         y="183.84564"
          id="tspan5726"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    QSLIST_ENTRY(Coroutine) pool_next;</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.47829247px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    QSLIST_ENTRY(Coroutine) pool_next;</tspan><tspan
          sodipodi:role="line"
-         x="-41.428558"
-         y="184.334"
+         x="-130.71428"
+         y="201.9435"
          id="tspan5728"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6" /><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.47829247px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6" /><tspan
          sodipodi:role="line"
-         x="-41.428558"
-         y="199.30701"
+         x="-130.71428"
+         y="220.04137"
          id="tspan5730"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    /* Coroutines that should be woken up when we yield or terminate */</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.47829247px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    /* Coroutines that should be woken up when we yield or terminate */</tspan><tspan
          sodipodi:role="line"
-         x="-41.428558"
-         y="214.28001"
+         x="-130.71428"
+         y="238.13924"
          id="tspan5732"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    QSIMPLEQ_HEAD(, Coroutine) co_queue_wakeup;</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.47829247px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    QSIMPLEQ_HEAD(, Coroutine) co_queue_wakeup;</tspan><tspan
          sodipodi:role="line"
-         x="-41.428558"
-         y="229.25301"
+         x="-130.71428"
+         y="256.23709"
          id="tspan5734"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    QSIMPLEQ_ENTRY(Coroutine) co_queue_next;</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.47829247px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">    QSIMPLEQ_ENTRY(Coroutine) co_queue_next;</tspan><tspan
          sodipodi:role="line"
-         x="-41.428558"
-         y="244.22601"
+         x="-130.71428"
+         y="274.33496"
          id="tspan5736"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.97840023px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">};</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.47829247px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';fill:#e6e6e6">};</tspan></text>
   </g>
 </svg>
