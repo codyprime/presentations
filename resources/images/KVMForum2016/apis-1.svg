@@ -219,10 +219,10 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.28"
-     inkscape:cx="569.68146"
-     inkscape:cy="40.947577"
+     inkscape:cx="376.94024"
+     inkscape:cy="259.69757"
      inkscape:document-units="px"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="g5415"
      showgrid="false"
      inkscape:window-width="1366"
      inkscape:window-height="739"
@@ -252,7 +252,7 @@
      inkscape:label="base"
      inkscape:groupmode="layer"
      id="layer1"
-     style="display:inline"
+     style="display:none"
      transform="translate(1971.5399,-550.30714)">
     <g
        transform="matrix(0.41105038,0,0,0.41105038,-1994.6523,601.48929)"
@@ -538,7 +538,7 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="fragment1"
-     style="display:inline"
+     style="display:none"
      transform="translate(1971.5399,-550.30714)">
     <flowRoot
        xml:space="preserve"
@@ -897,7 +897,7 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="fragment1a"
-     style="display:inline"
+     style="display:none"
      transform="translate(-4.0843604e-6,1.9802572e-6)">
     <text
        xml:space="preserve"
@@ -944,7 +944,7 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="fragment2"
-     style="display:inline"
+     style="display:none"
      transform="translate(-124.72864,115.67669)">
     <rect
        style="fill:#000000;fill-opacity:0;stroke:#e9eff0;stroke-width:0.94680315;stroke-opacity:0"
@@ -1297,7 +1297,7 @@
      inkscape:groupmode="layer"
      id="layer5"
      inkscape:label="fragment2a"
-     style="display:inline"
+     style="display:none"
      transform="translate(-4.0843604e-6,1.9802572e-6)">
     <g
        transform="translate(-4.0843604e-6,1.9802572e-6)"
@@ -1397,7 +1397,7 @@
    style="fill:#ffd42a"
    id="tspan4219">void</tspan> coroutine_fn qemu_coroutine_yield(<tspan
    style="fill:#ffd42a"
-   id="tspan4221">Coroutine</tspan> *coroutine);</tspan></text>
+   id="tspan4221">void</tspan>);</tspan></text>
     </g>
     <g
        id="g5119"
@@ -1690,7 +1690,7 @@
      inkscape:groupmode="layer"
      id="layer9"
      inkscape:label="fragment3a"
-     style="display:inline"
+     style="display:none"
      transform="translate(-4.0843604e-6,1.9802572e-6)">
     <g
        id="g4547"
@@ -1737,7 +1737,7 @@
      inkscape:groupmode="layer"
      id="layer7"
      inkscape:label="fragment4"
-     style="display:inline"
+     style="display:none"
      transform="translate(-124.72864,115.67669)">
     <g
        id="g5428"
@@ -2110,7 +2110,7 @@
      inkscape:groupmode="layer"
      id="layer10"
      inkscape:label="fragment4a"
-     style="display:inline"
+     style="display:none"
      transform="translate(-4.0843604e-6,1.9802572e-6)">
     <g
        style="display:inline"
