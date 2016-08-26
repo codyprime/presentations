@@ -57,10 +57,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="111.24587"
+     inkscape:cx="650.6008"
      inkscape:cy="118.14547"
      inkscape:document-units="px"
-     inkscape:current-layer="layer13"
+     inkscape:current-layer="layer7"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -287,7 +287,7 @@
          y="83.559563"
          x="785.28864"
          id="tspan8313"
-         sodipodi:role="line">caller (everything's a coroutine)</tspan></text>
+         sodipodi:role="line">caller (I'm a coroutine?)</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"

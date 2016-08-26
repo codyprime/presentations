@@ -312,11 +312,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="69.721502"
-     inkscape:cy="233.57242"
+     inkscape:zoom="1.979899"
+     inkscape:cx="171.40852"
+     inkscape:cy="114.43256"
      inkscape:document-units="px"
-     inkscape:current-layer="layer18"
+     inkscape:current-layer="layer19"
      showgrid="false"
      units="px"
      fit-margin-top="0"
@@ -472,12 +472,6 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer18"
-     inkscape:label="fragment4"
-     transform="translate(-4.1183084e-6,-4.3177096e-6)"
-     style="display:inline" />
-  <g
-     inkscape:groupmode="layer"
      id="layer19"
      inkscape:label="fragment5"
      transform="translate(-4.1183084e-6,-4.3177096e-6)"
@@ -507,7 +501,12 @@
          id="tspan22644"
          x="114.76857"
          y="405.71033"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:overpass_regular-web;-inkscape-font-specification:overpass_regular-web;fill:#e6e6e6">coroutine exit</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:overpass_regular-web;-inkscape-font-specification:overpass_regular-web;fill:#e6e6e6">coroutine exit</tspan><tspan
+         sodipodi:role="line"
+         x="114.76857"
+         y="435.26782"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:overpass_regular-web;-inkscape-font-specification:overpass_regular-web;fill:#e6e6e6"
+         id="tspan45216">   (terminate)</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#aaaaaa;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker43303)"
        d="m 93.439114,335.02218 1.010153,115.15739"
